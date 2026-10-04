@@ -6,6 +6,7 @@
   <!-- Страница закрыта от поисковиков: открывается только по прямой ссылке -->
   <meta name="robots" content="noindex, nofollow, noarchive">
   <title>Fizuli — редизайн интернет-магазина. Кейс</title>
+  <link rel="stylesheet" href="blocks.css">
   <style>
     :root { --black: #0e0d13; }
     * { box-sizing: border-box; }
@@ -37,8 +38,56 @@
 <body>
   <main class="case">
 
-    <section class="block" style="--w:1400; --h:1396">
-      <img src="assets/images/block-01.jpg" alt="01 · Первый экран: редизайн интернет-магазина Fizuli на десктопе, планшете и телефоне">
+    <section class="block" aria-label="01 · Первый экран">
+      <div class="stage b1">
+        <div class="abs meta"><span>UX/UI · Редизайн</span><span>2026</span><span>Интернет-магазин одежды</span></div>
+        <div class="abs rule" style="top:84px"></div>
+        <img class="abs title" src="assets/type/title.svg" alt="Редизайн интернет-магазина">
+        <p class="abs subtitle" style="margin:0">От каталога, где сложно найти вещь, — к магазину с понятной структурой</p>
+
+        <div class="abs laptop-base metal metal--flat"></div>
+        <div class="abs laptop-notch"></div>
+        <div class="abs laptop metal">
+          <div class="bezel"></div>
+          <div class="screen"><img src="assets/devices/laptop.jpg" alt="Главная страница на десктопе"></div>
+        </div>
+
+        <div class="abs tablet metal">
+          <div class="bezel"></div>
+          <div class="screen"><img src="assets/devices/tablet.jpg" alt="Страница товара на планшете"></div>
+        </div>
+
+        <div class="abs phone metal">
+          <span class="btn l1"></span><span class="btn l2"></span><span class="btn r"></span>
+          <div class="bezel"></div>
+          <div class="screen">
+            <div class="status"><b>9:41</b><i class="island"></i><i class="battery"></i></div>
+            <div class="page"><img src="assets/devices/phone.jpg" alt="Каталог на телефоне"></div>
+          </div>
+        </div>
+
+        <div class="abs dim" style="left:61px;top:1160px;width:270px"><i></i></div>
+        <div class="abs dim-label" style="left:61px;top:1182px;width:270px">Планшет 768</div>
+        <div class="abs dim" style="left:551px;top:1160px;width:300px"><i></i></div>
+        <div class="abs dim-label" style="left:551px;top:1182px;width:300px">Десктоп 1600</div>
+        <div class="abs dim" style="left:1082px;top:1160px;width:270px"><i></i></div>
+        <div class="abs dim-label" style="left:1082px;top:1182px;width:270px">Мобайл 375</div>
+
+        <div class="abs rule" style="top:1252px"></div>
+        <div class="abs passport" style="left:48px;top:1252px;width:1304px;height:144px">
+          <div class="abs sep" style="left:326px;top:28px;height:80px"></div>
+          <div class="abs sep" style="left:652px;top:28px;height:80px"></div>
+          <div class="abs sep" style="left:978px;top:28px;height:80px"></div>
+          <div class="abs lab" style="left:0;top:28px">Клиент</div>
+          <div class="abs val" style="left:0;top:56px">Fizuli — бренд повседневной и спортивной одежды</div>
+          <div class="abs lab" style="left:351px;top:28px">Моя роль</div>
+          <div class="abs val" style="left:351px;top:56px">Исследование, UX/UI, адаптив, дизайн-система</div>
+          <div class="abs lab" style="left:677px;top:28px">Задача</div>
+          <div class="abs val" style="left:677px;top:56px">Развести спорт и повседневное</div>
+          <div class="abs lab" style="left:1003px;top:28px">Результат</div>
+          <div class="abs val" style="left:1003px;top:56px">Победа в конкурсе, проект передан в разработку</div>
+        </div>
+      </div>
     </section>
 
     <section class="block" style="--w:1400; --h:900">
@@ -77,6 +126,10 @@
 
   <script>
     // Блоки проявляются при прокрутке; видео играют, только пока видны
+    // Блоки, собранные кодом, масштабируются по ширине окна (макет 1400 px)
+    const fit = () => document.documentElement.style.setProperty('--z', Math.min(1, innerWidth / 1400));
+    fit(); addEventListener('resize', fit);
+
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
         if (e.isIntersecting) e.target.classList.add('is-visible');

@@ -1,0 +1,77 @@
+/* Блоки кейса, собранные кодом. Макет — 1400 px в ширину; на более узких экранах
+   весь блок масштабируется целиком (свойство zoom), текст остаётся векторным и чётким */
+
+.stage { position: relative; width: 1400px; zoom: var(--z, 1); margin: 0 auto; overflow: hidden; }
+.stage * { box-sizing: border-box; }
+.stage { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+.abs { position: absolute; }
+
+/* ---------- Металл корпусов (градиент из макета) ---------- */
+.metal {
+  background: linear-gradient(143deg, #9fa3a8 0%, #4a4d52 18%, #2a2c30 42%, #8e9298 55%, #3a3d42 68%, #6d7177 100%);
+  border: 1.5px solid #d9dee5;
+}
+.metal--flat { background: linear-gradient(180deg, #9fa3a8 0%, #4a4d52 18%, #2a2c30 42%, #8e9298 55%, #3a3d42 68%, #6d7177 100%); border: 0; }
+.bezel { position: absolute; background: #0a0a0b; }
+.screen { position: absolute; overflow: hidden; background: #fff; }
+.screen > img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+
+/* ---------- Блок 1: первый экран ---------- */
+.b1 { height: 1396px; background: #0b0b0e url("assets/fabric-dark.jpg") center / cover; color: #f2f2f0; }
+.b1::before { content: ""; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 62% 52% at 50% 36%, rgba(6, 6, 10, .78) 0%, rgba(6, 6, 10, .35) 55%, rgba(6, 6, 10, 0) 100%); }
+.b1 > * { position: absolute; }
+
+.meta { left: 48px; right: 48px; top: 48px; display: grid; grid-template-columns: 1fr auto 1fr;
+  font-size: 14px; line-height: 19px; letter-spacing: .12em; text-transform: uppercase; color: rgba(242, 242, 240, .72); }
+.rule { left: 48px; width: 1304px; height: 1px; background: rgba(242, 242, 240, .2); }
+.b1 .title { left: 154px; top: 134px; width: 1091px; height: 55px; }
+.b1 .subtitle { left: 0; right: 0; top: 212px; text-align: center; font-size: 16px; line-height: 23px; color: #8f8f95; }
+
+.meta > :nth-child(2) { text-align: center; } .meta > :last-child { text-align: right; }
+
+/* ноутбук */
+.laptop-base { left: 107px; top: 940px; width: 1187px; height: 22px; border-radius: 11px; }
+.laptop-notch { left: 625px; top: 940px; width: 150px; height: 7px; border-radius: 4px; background: #2a2c30; }
+.laptop { left: 185px; top: 292px; width: 1030px; height: 650px; border-radius: 25px; box-shadow: 0 45px 100px rgba(0, 0, 0, .55); }
+.laptop .bezel { left: 9px; top: 9px; width: 1012px; height: 632px; border-radius: 18px; }
+.laptop .screen { left: 24.6px; top: 24.6px; width: 981px; height: 614px; border-radius: 5px; background: #000; }
+.laptop .screen > img { object-position: center; }
+
+/* планшет */
+.tablet { left: 48px; top: 746px; width: 270px; height: 368px; border-radius: 28px; box-shadow: 0 25px 57px rgba(0, 0, 0, .6); z-index: 2; }
+.tablet .bezel { left: 6px; top: 6px; width: 259px; height: 357px; border-radius: 23px; }
+.tablet .screen { left: 12px; top: 12px; width: 247px; height: 345px; border-radius: 17px; }
+
+/* телефон */
+.phone { left: 1082px; top: 472px; width: 270px; height: 565px; border-radius: 41px; box-shadow: 0 25px 57px rgba(0, 0, 0, .6); z-index: 2; }
+.phone .bezel { left: 9px; top: 9px; width: 252px; height: 548px; border-radius: 33px; }
+.phone .screen { left: 14px; top: 14px; width: 242px; height: 538px; border-radius: 28px; }
+.phone .status { position: absolute; left: 0; top: 0; width: 100%; height: 34px; background: #fff; }
+.phone .status b { position: absolute; left: 24px; top: 10px; font-size: 12px; line-height: 14px; font-weight: 700; color: #000; letter-spacing: .01em; }
+.phone .island { position: absolute; left: 50%; top: 6px; width: 84px; height: 23px; margin-left: -42px; border-radius: 12px; background: #000; }
+.phone .battery { position: absolute; right: 22px; top: 12px; width: 15px; height: 8px; border-radius: 2.5px; background: #000; }
+.phone .page { position: absolute; left: 0; top: 34px; width: 100%; height: 504px; }
+.phone .page > img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+.phone .btn { position: absolute; width: 3px; border-radius: 2px; background: linear-gradient(90deg, #8a8e94, #3a3d42 50%, #7a7e84); }
+.phone .btn.l1 { left: -3px; top: 126px; height: 44px; }
+.phone .btn.l2 { left: -3px; top: 182px; height: 44px; }
+.phone .btn.r { right: -3px; top: 151px; height: 69px; }
+
+/* подписи устройств со скобкой */
+.dim { height: 12px; border-top: 0; }
+.dim i { position: absolute; left: 0; right: 0; top: 5px; height: 1px; background: rgba(242, 242, 240, .35); }
+.dim::before, .dim::after { content: ""; position: absolute; top: 0; width: 1px; height: 11px; background: rgba(242, 242, 240, .35); }
+.dim::before { left: 0; } .dim::after { right: 0; }
+.dim-label { text-align: center; font-size: 14px; line-height: 19px; letter-spacing: .12em; text-transform: uppercase; color: rgba(242, 242, 240, .6); }
+
+/* паспорт проекта */
+.passport .sep { width: 1px; background: rgba(242, 242, 240, .2); }
+.passport .lab { font-size: 12px; line-height: 17px; letter-spacing: .12em; text-transform: uppercase; color: rgba(242, 242, 240, .5); width: 277px; }
+.passport .val { font-size: 16px; line-height: 22px; color: #f2f2f0; width: 277px; }
+
+/* появление блоков */
+.block { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+.block.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .block { opacity: 1; transform: none; transition: none; } }
