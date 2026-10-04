@@ -18,7 +18,7 @@
 .screen > img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
 
 /* ---------- Блок 1: первый экран ---------- */
-.b1 { height: 1396px; background: #0b0b0e url("assets/fabric-dark.jpg") center / cover; color: #f2f2f0; }
+.b1 { height: 1346px; background: #0b0b0e url("assets/fabric-dark.jpg") center / cover; color: #f2f2f0; }
 .b1::before { content: ""; position: absolute; inset: 0;
   background: radial-gradient(ellipse 62% 52% at 50% 36%, rgba(6, 6, 10, .78) 0%, rgba(6, 6, 10, .35) 55%, rgba(6, 6, 10, 0) 100%); }
 .b1 > * { position: absolute; }
@@ -40,12 +40,12 @@
 .laptop .screen > img { object-position: center; }
 
 /* планшет */
-.tablet { left: 36px; top: 633px; width: 365px; height: 497px; border-radius: 38px; box-shadow: 0 33px 77px rgba(0, 0, 0, .6); z-index: 2; }
-.tablet .bezel { left: 8px; top: 8px; width: 349px; height: 482px; border-radius: 31px; }
-.tablet .screen { left: 16px; top: 16px; width: 333px; height: 466px; border-radius: 23px; }
+.tablet { left: 60px; top: 696px; width: 270px; height: 368px; border-radius: 28px; box-shadow: 0 25px 57px rgba(0, 0, 0, .6); z-index: 2; }
+.tablet .bezel { left: 6px; top: 6px; width: 259px; height: 357px; border-radius: 23px; }
+.tablet .screen { left: 16px; top: 16px; width: 239px; height: 337px; border-radius: 17px; }
 
 /* телефон */
-.phone { left: 1082px; top: 545px; width: 270px; height: 565px; border-radius: 41px; box-shadow: 0 25px 57px rgba(0, 0, 0, .6); z-index: 2; }
+.phone { left: 1070px; top: 422px; width: 270px; height: 565px; border-radius: 41px; box-shadow: 0 25px 57px rgba(0, 0, 0, .6); z-index: 2; }
 .phone .bezel { left: 9px; top: 9px; width: 252px; height: 548px; border-radius: 33px; }
 .phone .screen { left: 14px; top: 14px; width: 242px; height: 538px; border-radius: 28px; }
 .phone .status { position: absolute; left: 0; top: 0; width: 100%; height: 34px; background: #fff; }
