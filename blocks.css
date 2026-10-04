@@ -95,7 +95,7 @@
 .b4 .play { position: absolute; left: 50%; top: 50%; width: 56px; height: 56px; margin: -28px 0 0 -28px; border-radius: 50%; background: rgba(14, 13, 19, .5); transition: opacity .3s ease; }
 .b4 .play::before { content: ""; position: absolute; left: 22px; top: 17px; border-left: 17px solid #fff; border-top: 11px solid transparent; border-bottom: 11px solid transparent; }
 .b4 .half.is-playing .play { opacity: 0; }
-.b4 .lab { position: absolute; top: 1091px; font-size: 12px; line-height: 17px; color: #757575; }
+.b4 .lab { position: absolute; top: 1091px; font-size: 12px; line-height: 17px; letter-spacing: .12em; text-transform: uppercase; color: #757575; }
 .b4 .r .lab { color: #9e9e9e; }
 .b4 .story { position: absolute; top: 1116px; width: 560px; margin: 0; font-size: 16px; line-height: 22px; }
 .b4 .l .lab, .b4 .l .story { left: 48px; } .b4 .r .lab, .b4 .r .story { left: 25px; }
