@@ -17,7 +17,7 @@ def rgba(hexc, o):
 def text_div(i, svg):
     if i.get('sup'):
         s = svg[i['id']]
-        x, y = RENDER[i['id']]
+        x, y = i.get('rb') or RENDER[i['id']]
         return f'<img class="t" src="{s["file"]}" alt="{html.escape(i["s"])}" style="left:{x}px;top:{y}px;width:{s["w"]}px;height:{s["h"]}px">'
     st = [f'left:{i["x"]}px', f'top:{i["y"]}px', f'font-size:{i["fs"]}px', f'color:{rgba(i["c"], i["o"])}']
     if i['st'] == 'Bold':
@@ -57,7 +57,7 @@ if __name__ == '__main__':
     data = json.load(open(SHOTS + 'blocks25.json', encoding='utf-8'))
     svg = json.load(open(SHOTS + 'svginfo.json', encoding='utf-8'))
     s = open('index.html', encoding='utf-8').read()
-    for key, alt, label, extra in (('b2', '02 · Бренд и задача', '02 · Бренд и задача', 'b2'), ('b5', 'Структура сайта', '05 · Структура', 'b5')):
+    for key, alt, label, extra in (('b2', '02 · Бренд и задача', '02 · Бренд и задача', 'b2'), ('b5', 'Структура сайта', '05 · Структура', 'b5'), ('b6', 'Цвет и типографика', '06 · Цвет и типографика', 'b6')):
         b = data[key]
         sec = f'''<section class="block" aria-label="{label}">
       <div class="stage tb {extra}" style="height:{b['h']}px;background:{b['bg']}">
