@@ -32,20 +32,20 @@
 .meta > :nth-child(2) { text-align: center; } .meta > :last-child { text-align: right; }
 
 /* ноутбук */
-.laptop-base { left: 107px; top: 940px; width: 1187px; height: 22px; border-radius: 11px; }
-.laptop-notch { left: 625px; top: 940px; width: 150px; height: 7px; border-radius: 4px; background: #2a2c30; }
-.laptop { left: 185px; top: 292px; width: 1030px; height: 650px; border-radius: 25px; box-shadow: 0 45px 100px rgba(0, 0, 0, .55); }
-.laptop .bezel { left: 9px; top: 9px; width: 1012px; height: 632px; border-radius: 18px; }
-.laptop .screen { left: 24.6px; top: 24.6px; width: 981px; height: 614px; border-radius: 5px; background: #000; }
+.laptop-base { left: 170px; top: 890px; width: 1060px; height: 20px; border-radius: 10px; }
+.laptop-notch { left: 625px; top: 890px; width: 150px; height: 7px; border-radius: 4px; background: #2a2c30; }
+.laptop { left: 240px; top: 312px; width: 920px; height: 580px; border-radius: 22px; box-shadow: 0 40px 90px rgba(0, 0, 0, .55); }
+.laptop .bezel { left: 8px; top: 8px; width: 904px; height: 564px; border-radius: 16px; }
+.laptop .screen { left: 22px; top: 22px; width: 876px; height: 548px; border-radius: 4px; background: #000; }
 .laptop .screen > img { object-position: center; }
 
 /* планшет */
-.tablet { left: 48px; top: 746px; width: 270px; height: 368px; border-radius: 28px; box-shadow: 0 25px 57px rgba(0, 0, 0, .6); z-index: 2; }
-.tablet .bezel { left: 6px; top: 6px; width: 259px; height: 357px; border-radius: 23px; }
-.tablet .screen { left: 12px; top: 12px; width: 247px; height: 345px; border-radius: 17px; }
+.tablet { left: 36px; top: 633px; width: 365px; height: 497px; border-radius: 38px; box-shadow: 0 33px 77px rgba(0, 0, 0, .6); z-index: 2; }
+.tablet .bezel { left: 8px; top: 8px; width: 349px; height: 482px; border-radius: 31px; }
+.tablet .screen { left: 16px; top: 16px; width: 333px; height: 466px; border-radius: 23px; }
 
 /* телефон */
-.phone { left: 1082px; top: 472px; width: 270px; height: 565px; border-radius: 41px; box-shadow: 0 25px 57px rgba(0, 0, 0, .6); z-index: 2; }
+.phone { left: 1082px; top: 545px; width: 270px; height: 565px; border-radius: 41px; box-shadow: 0 25px 57px rgba(0, 0, 0, .6); z-index: 2; }
 .phone .bezel { left: 9px; top: 9px; width: 252px; height: 548px; border-radius: 33px; }
 .phone .screen { left: 14px; top: 14px; width: 242px; height: 538px; border-radius: 28px; }
 .phone .status { position: absolute; left: 0; top: 0; width: 100%; height: 34px; background: #fff; }
