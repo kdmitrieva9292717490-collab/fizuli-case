@@ -103,3 +103,9 @@
 .b4 .l .steps { left: 48px; color: rgba(14, 13, 19, .38); } .b4 .r .steps { left: 25px; color: rgba(255, 255, 255, .38); }
 .b4 .steps span { transition: color .3s ease; }
 .b4 .l .steps .on { color: #0e0d13; } .b4 .r .steps .on { color: #fff; }
+
+/* ---------- Текстовые блоки, собранные из макета генератором (tools/gen.py) ---------- */
+.tb { color: #0e0d13; }
+.tb .t, .tb .r { position: absolute; margin: 0; }
+.tb .t { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 400; white-space: pre-wrap; overflow-wrap: normal; }
+.tb img.t { max-width: none; }
