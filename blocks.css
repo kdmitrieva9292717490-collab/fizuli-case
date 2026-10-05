@@ -137,6 +137,11 @@
   .b9 .shot.is-static { opacity: 1; }
 }
 
+/* ---------- Финал: спасибо и команда ---------- */
+.b10 { background: #0e0d13; }
+.b10 .lab { font-size: 12px; line-height: 17px; letter-spacing: .12em; color: rgba(242, 242, 240, .5); white-space: nowrap; }
+.b10 .val { font-size: 20px; line-height: 24px; color: #f2f2f0; white-space: nowrap; }
+
 /* ---------- Блок 7: компоненты на фото ---------- */
 .b7 { background: #0e0d13; }
 .b7 .b7-bg { left: 0; top: 0; width: 1400px; height: 100%; background: linear-gradient(rgba(14,13,19,.55), rgba(14,13,19,.55)), url("assets/photo-pair.jpg") 0 -94px / 1400px auto no-repeat; }
