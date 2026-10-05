@@ -110,6 +110,34 @@
 .tb .t { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 400; white-space: pre-wrap; overflow-wrap: normal; }
 .tb img.t { max-width: none; }
 
+/* ---------- Блок 09: все экраны, сетка 3×3 с перетекающей подсветкой ----------
+   Анимируется только непрозрачность: сдвиги и масштаб дают дрожание текста на экранах.
+   Все картинки крутят одну и ту же анимацию, разводит их отрицательная задержка. */
+.b9 { background: #0b0b0e; color: #f2f2f0; }
+.b9 .t { position: absolute; font-size: 14px; line-height: 19px; color: #fff; white-space: nowrap; }
+.b9 .shot {
+  position: absolute; display: block; max-width: none;
+  width: 386px; height: 241px; object-fit: cover; object-position: top center;
+  opacity: 0; will-change: opacity; backface-visibility: hidden;
+  animation: b9-fade 18s infinite both;
+  animation-delay: calc(var(--i) * -1.5s);
+}
+.b9.is-paused .shot { animation-play-state: paused; }
+
+@keyframes b9-fade {
+  0%      { opacity: 0; animation-timing-function: linear; }   /* проявление 3,0 с */
+  16.67%  { opacity: 1; animation-timing-function: linear; }   /* полная яркость 1,5 с */
+  25%     { opacity: 1; animation-timing-function: ease-out; } /* угасание 3,5 с, мягче входа */
+  44.44%  { opacity: 0; }
+  100%  { opacity: 0; }                                      /* ждёт своей очереди */
+}
+
+/* Кому движение мешает — показываем статичную сетку: по одному экрану на ячейку */
+@media (prefers-reduced-motion: reduce) {
+  .b9 .shot { animation: none; opacity: 0; }
+  .b9 .shot.is-static { opacity: 1; }
+}
+
 /* ---------- Блок 7: компоненты на фото ---------- */
 .b7 { background: #0e0d13; }
 .b7 .b7-bg { left: 0; top: 0; width: 1400px; height: 100%; background: linear-gradient(rgba(14,13,19,.55), rgba(14,13,19,.55)), url("assets/photo-pair.jpg") 0 -94px / 1400px auto no-repeat; }
