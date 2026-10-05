@@ -113,7 +113,7 @@
 /* ---------- Блок 09: все экраны, сетка 3×3 с перетекающей подсветкой ----------
    Анимируется только непрозрачность: сдвиги и масштаб дают дрожание текста на экранах.
    Все картинки крутят одну и ту же анимацию, разводит их отрицательная задержка. */
-.b9 { background: #0b0b0e; }
+.b9 { background: #0e0d13; }
 .b9 .shot {
   position: absolute; display: block; max-width: none;
   width: 386px; height: 241px; object-fit: cover; object-position: top center;
