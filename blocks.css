@@ -152,8 +152,13 @@
 
 /* ---------- Финал: спасибо и команда ---------- */
 .b10 { background: #0e0d13; }
-.b10 .lab { font-size: 12px; line-height: 17px; letter-spacing: .12em; color: rgba(242, 242, 240, .5); white-space: nowrap; }
-.b10 .val { font-size: 20px; line-height: 24px; color: #f2f2f0; white-space: nowrap; }
+.b10 { color: #fff; }
+.b10 .lab { font-size: 12px; line-height: 17px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255, 255, 255, .6); white-space: nowrap; }
+.b10 .val { font-size: 20px; line-height: 28px; color: #fff; white-space: nowrap; }
+.b10 .f-meta { font-size: 14px; line-height: 19px; text-transform: uppercase; white-space: nowrap; }
+.b10 .f-txt { font-size: 20px; line-height: 28px; }
+.b10 blockquote p { margin: 0; } .b10 blockquote p + p { margin-top: 16px; }
+.b10 .f-avatar { position: absolute; left: 48px; top: 467px; width: 48px; height: 48px; display: block; }
 
 /* ---------- Блок 7: компоненты на фото ---------- */
 .b7 { background: #0e0d13; }
