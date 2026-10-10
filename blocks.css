@@ -180,9 +180,3 @@
 .b5p .play { position: absolute; left: 50%; top: 50%; width: 64px; height: 64px; margin: -32px 0 0 -32px; background: #0e0d13; border: 1px solid rgba(255, 255, 255, .12); }
 .b5p .play::before { content: ""; position: absolute; left: 26px; top: 23px; border-left: 14px solid transparent; border-top: 8px solid transparent; border-bottom: 8px solid transparent; box-shadow: none; outline: 0; border-left-color: #fff; }
 
-/* ---------- Блок «Каталог»: экран каталога + панель фильтров на светлой ткани ---------- */
-.b6c { background: #fff url("assets/catalog/fabric.jpg") center / cover; }
-.b6c .c-meta { font-size: 14px; line-height: 19px; text-transform: uppercase; white-space: nowrap; }
-.b6c .c-screen { position: absolute; left: 47px; top: 162px; width: 1098px; height: auto; display: block; }
-/* картинка панели включает её тени: 12 px слева и справа, 24 px снизу */
-.b6c .c-filters { position: absolute; left: 970px; top: 403px; width: 394.4px; height: auto; display: block; }
