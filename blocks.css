@@ -84,32 +84,35 @@
 @media (prefers-reduced-motion: reduce) { .block { opacity: 1; transform: none; transition: none; } }
 
 /* ---------- Блок «Сценарии»: две половины, запуск по наведению ---------- */
-.b4 { height: 1280px; background: #e4e4e4 url("assets/fabric-light.jpg") center / cover; background-blend-mode: multiply; color: #0e0d13; }
+.b4 { height: 1269px; background: #f2f2f2 url("assets/fabric-light.jpg") left top / 900px 1269px no-repeat; background-blend-mode: multiply; color: #0e0d13; }
 .b4 .dark-half { position: absolute; left: 700px; top: 0; width: 700px; height: 100%; background: #17171a url("assets/fabric-dark.jpg") center / cover;
   box-shadow: -6px 0 24px rgba(0, 0, 0, .18), -20px 0 80px rgba(0, 0, 0, .12); }
 .b4 .meta { color: #0e0d13; }
 .b4 .meta > :last-child { color: #fff; }
 .b4 .half { position: absolute; top: 0; width: 700px; height: 100%; cursor: pointer; }
 .b4 .half.l { left: 0; } .b4 .half.r { left: 700px; color: #fff; }
-.b4 .half .content { position: absolute; inset: 0; transition: opacity .4s ease, filter .4s ease; }
-.b4 .half.is-dim .content { opacity: .38; filter: saturate(.5); }
-.b4 .head { position: absolute; top: 140px; height: auto; }
-.b4 .l .head { left: 48px; } .b4 .r .head { left: 25px; }
-.b4 .phone { z-index: 1; transform: scale(1.4); transform-origin: 0 0; top: 260px; left: 162px; }
+.b4 .half .content { position: absolute; inset: 0; }
+/* неактивная половина затемняется чёрным слоем, а не становится прозрачной */
+.b4 .half::after { content: ""; position: absolute; inset: 0; z-index: 3; background: #000; opacity: 0; pointer-events: none; transition: opacity .4s ease; }
+.b4 .half.is-dim::after { opacity: .55; }
+.b4 .head { position: absolute; top: 148px; height: auto; }
+.b4 .l .head { left: 52px; } .b4 .r .head { left: 28px; }
+/* телефон: корпус iPhone 16 Pro Max из Figma поверх экрана с видео */
+.b4 .phone { position: absolute; z-index: 1; left: 159px; top: 265px; width: 383px; height: 781px; border-radius: 62px; }
+.b4 .phone .screen { position: absolute; left: 16.5px; top: 15.1px; width: 349px; height: 752px; border-radius: 46.2px; overflow: hidden; background: #fff; }
+.b4 .phone video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.b4 .phone .case { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 .b4 .l .phone { box-shadow: 0 1px 2px rgba(0,0,0,.02), 0 3px 6px rgba(0,0,0,.025), 0 8px 16px rgba(0,0,0,.03), 0 18px 36px rgba(0,0,0,.04), 0 40px 80px rgba(0,0,0,.05), 0 70px 140px rgba(0,0,0,.04); }
 .b4 .r .phone { box-shadow: 0 1px 2px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.12), 0 8px 16px rgba(0,0,0,.14), 0 18px 36px rgba(0,0,0,.18), 0 40px 80px rgba(0,0,0,.22), 0 70px 140px rgba(0,0,0,.2); }
-.b4 .phone video { display: block; width: 100%; height: 100%; object-fit: cover; }
 .b4 .play { position: absolute; left: 50%; top: 50%; width: 56px; height: 56px; margin: -28px 0 0 -28px; border-radius: 50%; background: rgba(14, 13, 19, .5); transition: opacity .3s ease; }
 .b4 .play::before { content: ""; position: absolute; left: 22px; top: 17px; border-left: 17px solid #fff; border-top: 11px solid transparent; border-bottom: 11px solid transparent; }
 .b4 .half.is-playing .play { opacity: 0; }
-.b4 .lab { position: absolute; top: 1091px; font-size: 12px; line-height: 17px; letter-spacing: .12em; text-transform: uppercase; color: #757575; }
-.b4 .r .lab { color: #9e9e9e; }
-.b4 .story { position: absolute; top: 1116px; width: 560px; margin: 0; font-size: 16px; line-height: 1.4; }
-.b4 .l .lab, .b4 .l .story { left: 48px; } .b4 .r .lab, .b4 .r .story { left: 25px; }
-.b4 .steps { position: absolute; top: 1196px; display: flex; gap: 20px; font-size: 12px; line-height: 17px; letter-spacing: .12em; text-transform: uppercase; }
-.b4 .l .steps { left: 48px; color: rgba(14, 13, 19, .38); } .b4 .r .steps { left: 25px; color: rgba(255, 255, 255, .38); }
-.b4 .steps span { transition: color .3s ease; }
-.b4 .l .steps .on { color: #0e0d13; } .b4 .r .steps .on { color: #fff; }
+.b4 .lab { position: absolute; top: 1094px; font-size: 14px; line-height: 19px; letter-spacing: .12em; text-transform: uppercase; }
+.b4 .story, .b4 .note { position: absolute; width: 620px; margin: 0; font-size: 20px; line-height: 28px; }
+.b4 .story { top: 1121px; } .b4 .note { top: 1193px; }
+.b4 .l .lab, .b4 .l .story, .b4 .l .note { left: 48px; } .b4 .r .lab, .b4 .r .story { left: 25px; }
+/* подписи шагов видео: во Figma их нет — вернём, когда будем вставлять видео */
+.b4 .steps { display: none; }
 
 /* ---------- Текстовые блоки, собранные из макета генератором (tools/gen.py) ---------- */
 .tb { color: #0e0d13; }
