@@ -26,7 +26,7 @@
 
 .meta { left: 48px; right: 48px; top: 48px; display: grid; grid-template-columns: 1fr auto 1fr;
   font-size: 14px; line-height: 19px; letter-spacing: .12em; text-transform: uppercase; color: #fff; }
-.rule { left: 48px; width: 1304px; height: 1px; background: rgba(242, 242, 240, .2); }
+.rule { left: 48px; width: 1304px; height: 1px; background: rgba(255, 255, 255, .2); }
 .b1 .title { left: 155.6px; top: 191px; width: 1091px; height: 55px; }
 .b1 .subtitle { left: 0; right: 0; top: 263px; text-align: center; font-size: 16px; line-height: 22px; color: rgba(242, 242, 240, .6); }
 
@@ -68,13 +68,13 @@
 
 /* подписи устройств со скобкой */
 .dim { height: 12px; border-top: 0; }
-.dim i { position: absolute; left: 0; right: 0; top: 5px; height: 1px; background: rgba(255, 255, 255, .6); }
-.dim::before, .dim::after { content: ""; position: absolute; top: 0; width: 1px; height: 11px; background: rgba(255, 255, 255, .6); }
+.dim i { position: absolute; left: 0; right: 0; top: 5px; height: 1px; background: rgba(255, 255, 255, .2); }
+.dim::before, .dim::after { content: ""; position: absolute; top: 0; width: 1px; height: 11px; background: rgba(255, 255, 255, .2); }
 .dim::before { left: 0; } .dim::after { right: 0; }
 .dim-label { text-align: center; font-size: 12px; line-height: 17px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255, 255, 255, .6); }
 
 /* паспорт проекта */
-.passport .sep { width: 1px; background: rgba(242, 242, 240, .2); }
+.passport .sep { width: 1px; background: rgba(255, 255, 255, .2); }
 .passport .lab { font-size: 12px; line-height: 17px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255, 255, 255, .6); width: 277px; }
 .passport .val { font-size: 16px; line-height: 1.4; color: rgba(255, 255, 255, .8); width: 277px; }
 
@@ -211,7 +211,7 @@
 .b8p .p8-ui { position: absolute; height: auto; display: block; }
 .b8p .p8-lab { font-size: 12px; line-height: 17px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255, 255, 255, .6); }
 .b8p .p8-txt { font-size: 16px; line-height: 1.4; color: rgba(255, 255, 255, .8); }
-.b8p .p8-line { background: rgba(255, 255, 255, .6); }
+.b8p .p8-line { background: rgba(255, 255, 255, .2); }
 
 /* ---------- Блок «Корзина и заказ»: экраны на чёрном, свет за ними, два iPhone ---------- */
 .b9c { color: #fff; }
@@ -235,7 +235,7 @@
 .b11 .k-video > img, .b11 .k-video > video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
 .b11 .k-hero .play { position: absolute; left: 222px; top: 315px; width: 64px; height: 64px; }
 .b11 .k-txt { font-size: 16px; line-height: 1.4; color: rgba(255, 255, 255, .8); }
-.b11 .k-line { background: rgba(255, 255, 255, .6); }
+.b11 .k-line { background: rgba(255, 255, 255, .2); }
 .b11 .k-story { position: absolute; left: 178px; top: 1076px; width: 1044px; height: 558.3px; background: #fff; }
 .b11 .k-story img { position: absolute; top: 24px; width: 300px; height: auto; display: block; }
 
