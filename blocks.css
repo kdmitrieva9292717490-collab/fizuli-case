@@ -25,7 +25,7 @@
 .b1 > * { position: absolute; }
 
 .meta { left: 48px; right: 48px; top: 48px; display: grid; grid-template-columns: 1fr auto 1fr;
-  font-size: 14px; line-height: 19px; letter-spacing: .12em; text-transform: uppercase; color: rgba(242, 242, 240, .72); }
+  font-size: 14px; line-height: 19px; letter-spacing: .12em; text-transform: uppercase; color: #fff; }
 .rule { left: 48px; width: 1304px; height: 1px; background: rgba(242, 242, 240, .2); }
 .b1 .title { left: 155.6px; top: 191px; width: 1091px; height: 55px; }
 .b1 .subtitle { left: 0; right: 0; top: 263px; text-align: center; font-size: 16px; line-height: 22px; color: rgba(242, 242, 240, .6); }
@@ -68,15 +68,15 @@
 
 /* подписи устройств со скобкой */
 .dim { height: 12px; border-top: 0; }
-.dim i { position: absolute; left: 0; right: 0; top: 5px; height: 1px; background: rgba(242, 242, 240, .35); }
-.dim::before, .dim::after { content: ""; position: absolute; top: 0; width: 1px; height: 11px; background: rgba(242, 242, 240, .35); }
+.dim i { position: absolute; left: 0; right: 0; top: 5px; height: 1px; background: rgba(255, 255, 255, .6); }
+.dim::before, .dim::after { content: ""; position: absolute; top: 0; width: 1px; height: 11px; background: rgba(255, 255, 255, .6); }
 .dim::before { left: 0; } .dim::after { right: 0; }
-.dim-label { text-align: center; font-size: 12px; line-height: 17px; letter-spacing: .12em; text-transform: uppercase; color: rgba(242, 242, 240, .6); }
+.dim-label { text-align: center; font-size: 12px; line-height: 17px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255, 255, 255, .6); }
 
 /* паспорт проекта */
 .passport .sep { width: 1px; background: rgba(242, 242, 240, .2); }
-.passport .lab { font-size: 12px; line-height: 17px; letter-spacing: .12em; text-transform: uppercase; color: rgba(242, 242, 240, .6); width: 277px; }
-.passport .val { font-size: 16px; line-height: 1.4; color: rgba(242, 242, 240, .6); width: 277px; }
+.passport .lab { font-size: 12px; line-height: 17px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255, 255, 255, .6); width: 277px; }
+.passport .val { font-size: 16px; line-height: 1.4; color: #fff; width: 277px; }
 
 /* появление блоков */
 .block { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
@@ -181,7 +181,7 @@
 .b5p .floor { position: absolute; left: 139px; top: 930.7px; width: 1121px; height: 34px; border-radius: 50%; background: rgba(0, 0, 0, .85); filter: blur(18px); }
 .b5p .p-meta { font-size: 14px; line-height: 19px; text-transform: uppercase; white-space: nowrap; }
 .b5p .p-lab { font-size: 12px; line-height: 17px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255, 255, 255, .6); }
-.b5p .p-txt { font-size: 16px; line-height: 1.4; color: rgba(255, 255, 255, .6); }
+.b5p .p-txt { font-size: 16px; line-height: 1.4; color: #fff; }
 .b5p .laptop { position: absolute; left: 48px; top: 87.5px; width: 1303.8px; height: 869.2px; }
 /* экран — место под видео (вставим в конце) */
 .b5p .screen { position: absolute; left: 121.9px; top: 91.6px; width: 1059.9px; height: 685.9px; border-radius: 14px 14px 0 0; overflow: hidden; background: #1f1f24; }
@@ -248,7 +248,7 @@
   box-shadow: 0 3.4px 5.1px -1.7px rgba(0, 0, 0, .03), 0 10.2px 13.6px -3.4px rgba(0, 0, 0, .1); }
 .b6c .c-filters img { position: absolute; left: -8.3px; top: 0; width: 331.1px; height: auto; display: block; }
 .b7l .l-lab { font-size: 12px; line-height: 17px; letter-spacing: .12em; text-transform: uppercase; color: rgba(14, 13, 19, .6); white-space: nowrap; }
-.b7l .l-val { font-size: 16px; line-height: 1.4; color: rgba(14, 13, 19, .6); }
+.b7l .l-val { font-size: 16px; line-height: 1.4; color: #0e0d13; }
 
 /* ---------- Внешние поля блоков: 144 сверху и снизу (было 48) ----------
    Всё содержимое опускаем на 96 px, фоновые слои (.bg) остаются на месте и тянутся на всю высоту.
