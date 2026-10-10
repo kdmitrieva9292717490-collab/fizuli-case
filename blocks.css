@@ -165,3 +165,17 @@
 .b5 .s-name { font-size: 20px; line-height: 28px; font-weight: 700; text-transform: uppercase; }
 .b5 .s-desc { font-size: 16px; line-height: 1.4; color: rgba(14, 13, 19, .6); }
 .b5 .on-dark { color: #fff; } .b5 .s-lab.on-dark, .b5 .on-dark-60 { color: rgba(255, 255, 255, .6); }
+
+/* ---------- Блок «Путь к товару»: MacBook на чёрном, 4 шага ---------- */
+.b5p { color: #fff; }
+.b5p .glow { position: absolute; left: -50px; top: 104px; width: 1500px; height: 900px; border-radius: 50%; background: rgba(255, 255, 255, .1); filter: blur(200px); }
+.b5p .floor { position: absolute; left: 139px; top: 1006px; width: 1121px; height: 34px; border-radius: 50%; background: rgba(0, 0, 0, .85); filter: blur(18px); }
+.b5p .p-meta { font-size: 14px; line-height: 19px; text-transform: uppercase; white-space: nowrap; }
+.b5p .p-lab { font-size: 12px; line-height: 17px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255, 255, 255, .6); }
+.b5p .p-txt { font-size: 16px; line-height: 1.4; }
+.b5p .laptop { position: absolute; left: 48px; top: 163px; width: 1303.8px; height: 869.2px; }
+/* экран — место под видео (вставим в конце) */
+.b5p .screen { position: absolute; left: 121.9px; top: 91.6px; width: 1059.9px; height: 685.9px; border-radius: 14px 14px 0 0; overflow: hidden; background: #1f1f24; }
+.b5p .case { position: absolute; inset: 0; width: 100%; height: 100%; }
+.b5p .play { position: absolute; left: 50%; top: 50%; width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 50%; background: rgba(255, 255, 255, .12); }
+.b5p .play::before { content: ""; position: absolute; left: 25px; top: 20px; border-left: 19px solid #fff; border-top: 12px solid transparent; border-bottom: 12px solid transparent; }
