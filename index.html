@@ -8,7 +8,7 @@
   <title>Fizuli — редизайн интернет-магазина. Кейс</title>
   <!-- ?v= менять при каждой правке стилей: GitHub Pages отдаёт CSS с кешем на 10 минут,
        и без новой версии браузер держит старый файл при уже новой разметке -->
-  <link rel="stylesheet" href="blocks.css?v=2026-10-10-8">
+  <link rel="stylesheet" href="blocks.css?v=2026-10-10-10">
   <style>
     :root { --black: #0e0d13; }
     * { box-sizing: border-box; }
@@ -215,6 +215,19 @@
 
     <section class="block" aria-label="06 · Каталог" style="--w:1400; --h:1547">
       <img src="assets/catalog/block.jpg" alt="Каталог повседневной линии на десктопе и панель фильтров: назначение, коллекция, категории, цена, цвет, размер" loading="lazy">
+    </section>
+
+    <section class="block" aria-label="07 · Лукбук">
+      <div class="stage tb b7l" style="height:1175px;background:#ffffff">
+        <div class="t l-meta" style="left:48px;top:48px">07  ·  Лукбук</div>
+        <div class="t l-meta" style="right:48px;top:48px;text-align:right">Решения</div>
+        <!-- Место под видео. Сейчас — первый кадр (poster). Видео вставим в конце:
+             <video src="assets/videos/…mp4" poster="assets/lookbook/poster.jpg" muted loop playsinline preload="none"></video> -->
+        <div class="l-video">
+          <img class="poster" src="assets/lookbook/poster.jpg" alt="Страница «Готовые образы»: образы на моделях, вещи из образа можно сразу положить в корзину" loading="lazy">
+          <img class="play" src="assets/icons/play.svg" alt="" aria-hidden="true">
+        </div>
+      </div>
     </section>
 
     <section class="block" aria-label="05 · Цвет и типографика">
