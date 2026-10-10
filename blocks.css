@@ -107,7 +107,7 @@
 .b4 .play { position: absolute; left: 50%; top: 50%; width: 56px; height: 56px; margin: -28px 0 0 -28px; border-radius: 50%; background: rgba(14, 13, 19, .5); transition: opacity .3s ease; }
 .b4 .play::before { content: ""; position: absolute; left: 22px; top: 17px; border-left: 17px solid #fff; border-top: 11px solid transparent; border-bottom: 11px solid transparent; }
 .b4 .half.is-playing .play { opacity: 0; }
-.b4 .lab { position: absolute; top: 1094px; font-size: 14px; line-height: 19px; letter-spacing: .12em; text-transform: uppercase; opacity: .6; }
+.b4 .lab { position: absolute; top: 1094px; font-size: 12px; line-height: 17px; letter-spacing: .12em; text-transform: uppercase; opacity: .6; }
 .b4 .story, .b4 .note { position: absolute; width: 620px; margin: 0; font-size: 20px; line-height: 28px; }
 .b4 .story { top: 1121px; } .b4 .note { top: 1193px; }
 .b4 .l .lab, .b4 .l .story, .b4 .l .note { left: 48px; } .b4 .r .lab, .b4 .r .story { left: 25px; }
@@ -180,7 +180,7 @@
 .b5p .floor { position: absolute; left: 139px; top: 930.7px; width: 1121px; height: 34px; border-radius: 50%; background: rgba(0, 0, 0, .85); filter: blur(18px); }
 .b5p .p-meta { font-size: 14px; line-height: 19px; text-transform: uppercase; white-space: nowrap; }
 .b5p .p-lab { font-size: 12px; line-height: 17px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255, 255, 255, .6); }
-.b5p .p-txt { font-size: 16px; line-height: 1.4; }
+.b5p .p-txt { font-size: 16px; line-height: 1.4; color: rgba(255, 255, 255, .6); }
 .b5p .laptop { position: absolute; left: 48px; top: 87.5px; width: 1303.8px; height: 869.2px; }
 /* экран — место под видео (вставим в конце) */
 .b5p .screen { position: absolute; left: 121.9px; top: 91.6px; width: 1059.9px; height: 685.9px; border-radius: 14px 14px 0 0; overflow: hidden; background: #1f1f24; }
