@@ -8,7 +8,7 @@
   <title>Fizuli — редизайн интернет-магазина. Кейс</title>
   <!-- ?v= менять при каждой правке стилей: GitHub Pages отдаёт CSS с кешем на 10 минут,
        и без новой версии браузер держит старый файл при уже новой разметке -->
-  <link rel="stylesheet" href="blocks.css?v=2026-10-10-12">
+  <link rel="stylesheet" href="blocks.css?v=2026-10-10-13">
   <style>
     :root { --black: #0e0d13; }
     * { box-sizing: border-box; }
@@ -329,29 +329,35 @@
       </div>
     </section>
 
-    <section class="block" aria-label="06 · Компоненты">
-      <div class="stage tb b7" style="height:1363px">
-        <div class="r b7-bg"></div>
-        <img class="comp" style="left:48px;top:163px;width:454px;height:900px" src="assets/components/filters.jpg" alt="Панель фильтров" loading="lazy">
-        <img class="comp" style="left:581px;top:163px;width:318px;height:511px" src="assets/components/card.jpg" alt="Карточка товара" loading="lazy">
-        <img class="comp" style="left:977px;top:163px;width:375px;height:343px" src="assets/components/notify.jpg" alt="Окно «Уведомить о поступлении»" loading="lazy">
-        <!-- записи поверх компонентов -->
-        <video class="comp" style="left:48px;top:163px;width:454px;height:900px;object-fit:contain;background:#fff" src="assets/videos/filters.mp4" muted loop playsinline preload="metadata"></video>
-        <video class="comp" style="left:597px;top:179px;width:286px;height:479px;background:#fff" src="assets/videos/card.mp4" muted loop playsinline preload="metadata"></video>
-        <div class="t" style="left:48px;top:48px;font-size:14px;color:rgb(255,255,255);line-height:19.0px;width:139px;white-space:nowrap">06&nbsp;&nbsp;·&nbsp;&nbsp;КОМПОНЕНТЫ</div>
-        <div class="t" style="left:1282px;top:48px;font-size:14px;color:rgb(255,255,255);line-height:19.0px;width:70px;white-space:nowrap">СИСТЕМА</div>
-        <img class="t" src="assets/type/n-2146-16987.svg" alt="91" style="left:402.78px;top:1210.4px;width:84.0px;height:43.0px">
-        <div class="t" style="left:399px;top:1281px;font-size:12px;color:rgba(255,255,255,0.6);line-height:17.0px;letter-spacing:0.12em;width:252px">КОМПОНЕНТ</div>
-        <img class="t" src="assets/type/n-2146-16989.svg" alt="315" style="left:51.48px;top:1210.82px;width:128.0px;height:43.0px">
-        <div class="t" style="left:48px;top:1281px;font-size:12px;color:rgba(255,255,255,0.6);line-height:17.0px;letter-spacing:0.12em;width:252px">ВАРИАНТОВ</div>
-        <img class="t" src="assets/type/n-2146-16991.svg" alt="5 + 35" style="left:729.68px;top:1211px;width:220.0px;height:42.0px">
-        <div class="t" style="left:725px;top:1281px;font-size:12px;color:rgba(255,255,255,0.6);line-height:17.0px;letter-spacing:0.12em;width:252px">БАЗОВЫХ ЦВЕТОВ + СМЫСЛОВЫХ ПЕРЕМЕННЫХ</div>
-        <img class="t" src="assets/type/n-2146-16993.svg" alt="48" style="left:1053.1px;top:1210.4px;width:98.0px;height:44.0px">
-        <div class="t" style="left:1051px;top:1281px;font-size:12px;color:rgba(255,255,255,0.6);line-height:17.0px;letter-spacing:0.12em;width:252px">ТЕКСТОВЫХ СТИЛЕЙ</div>
-        <div class="r" style="left:48px;top:1159px;width:1304px;height:1px;background:rgba(242,242,240,0.2)"></div>
-        <div class="r" style="left:374px;top:1187px;width:1px;height:136px;background:rgba(242,242,240,0.2)"></div>
-        <div class="r" style="left:700px;top:1187px;width:1px;height:136px;background:rgba(242,242,240,0.2)"></div>
-        <div class="r" style="left:1026px;top:1187px;width:1px;height:136px;background:rgba(242,242,240,0.2)"></div>
+    <section class="block" aria-label="11 · Карточка товара">
+      <div class="stage tb b11" style="height:1730px">
+        <img class="k-bg" style="top:0" src="assets/card/bg-top.jpg" alt="" aria-hidden="true" loading="lazy">
+        <img class="k-bg" style="top:865px" src="assets/card/bg-bottom.jpg" alt="" aria-hidden="true" loading="lazy">
+        <div class="t k-meta" style="left:48px;top:48px">11  ·  Карточка товара</div>
+        <div class="t k-meta" style="right:48px;top:48px;text-align:right">Система</div>
+        <!-- Герой: место под видео взаимодействия с карточкой. Сейчас — первый кадр (hero.png). Видео вставим в конце:
+             <video src="assets/videos/…mp4" poster="assets/card/hero.png" muted loop playsinline preload="none"></video> -->
+        <div class="k-hero">
+          <div class="k-video"><img src="assets/card/hero.png" alt="Карточка товара: костюм из жатой ткани, 12 500 ₽" loading="lazy"></div>
+          <img class="play" src="assets/icons/play.svg" alt="" aria-hidden="true">
+        </div>
+        <div class="t k-txt" style="left:158px;top:390.8px;width:240px">Фото листаются по&nbsp;зонам наведения</div>
+        <div class="t k-txt" style="left:158px;top:713.3px;width:240px">Размер выбирается прямо на&nbsp;фото</div>
+        <div class="t k-txt" style="left:158px;top:930px;width:240px">Цена без зачёркнутых</div>
+        <div class="t k-txt" style="left:1002px;top:206px;width:240px">Избранное — в&nbsp;один клик</div>
+        <div class="t k-txt" style="left:1002px;top:713.3px;width:240px">Корзина появляется при&nbsp;наведении на&nbsp;карточку</div>
+        <div class="t k-txt" style="left:1002px;top:851px;width:240px">Свотч меняет цвет на&nbsp;фото</div>
+        <div class="r k-line" style="left:414px;top:412.8px;width:111.2px;height:1px"></div>
+        <div class="r k-line" style="left:414px;top:735.3px;width:111.2px;height:1px"></div>
+        <div class="r k-line" style="left:414px;top:941px;width:56px;height:1px"></div>
+        <div class="r k-line" style="left:920px;top:217px;width:66px;height:1px"></div>
+        <div class="r k-line" style="left:884px;top:735.3px;width:102px;height:1px"></div>
+        <div class="r k-line" style="left:550px;top:862px;width:436px;height:1px"></div>
+        <div class="k-story">
+          <img style="left:24px" src="assets/card/frame-1.png" alt="Кадр 1: обычная карточка" loading="lazy">
+          <img style="left:372px" src="assets/card/frame-2.png" alt="Кадр 2: выбор размера на фото, товар в избранном" loading="lazy">
+          <img style="left:720px" src="assets/card/frame-3.png" alt="Кадр 3: нет в наличии, «Уведомить о поступлении»" loading="lazy">
+        </div>
       </div>
     </section>
 
