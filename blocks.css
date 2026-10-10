@@ -76,7 +76,7 @@
 /* паспорт проекта */
 .passport .sep { width: 1px; background: rgba(242, 242, 240, .2); }
 .passport .lab { font-size: 12px; line-height: 17px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255, 255, 255, .6); width: 277px; }
-.passport .val { font-size: 16px; line-height: 1.4; color: #fff; width: 277px; }
+.passport .val { font-size: 16px; line-height: 1.4; color: rgba(255, 255, 255, .8); width: 277px; }
 
 /* появление блоков */
 .block { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
@@ -84,7 +84,7 @@
 @media (prefers-reduced-motion: reduce) { .block { opacity: 1; transform: none; transition: none; } }
 
 /* ---------- Блок «Сценарии»: две половины, запуск по наведению ---------- */
-.b4 { height: 1461px; background: #f2f2f2; color: #0e0d13; }
+.b4 { height: 1443px; background: #f2f2f2; color: #0e0d13; }
 .b4 .light-bg { position: absolute; left: 0; top: 0; width: 900px; height: 100%; background: #f2f2f2 url("assets/fabric-light.jpg") center / cover; background-blend-mode: multiply; }
 .b4 .dark-half { position: absolute; left: 700px; top: 0; width: 700px; height: 100%; background: #17171a url("assets/fabric-dark.jpg") center / cover;
   box-shadow: -6px 0 24px rgba(0, 0, 0, .18), -20px 0 80px rgba(0, 0, 0, .12); }
@@ -109,8 +109,9 @@
 .b4 .play::before { content: ""; position: absolute; left: 22px; top: 17px; border-left: 17px solid #fff; border-top: 11px solid transparent; border-bottom: 11px solid transparent; }
 .b4 .half.is-playing .play { opacity: 0; }
 .b4 .lab { position: absolute; top: 1094px; font-size: 12px; line-height: 17px; letter-spacing: .12em; text-transform: uppercase; opacity: .6; }
-.b4 .story, .b4 .note { position: absolute; width: 620px; margin: 0; font-size: 20px; line-height: 28px; }
-.b4 .story { top: 1121px; } .b4 .note { top: 1193px; }
+.b4 .story, .b4 .note { position: absolute; width: 620px; margin: 0; font-size: 16px; line-height: 1.4; }
+.b4 .r .story { color: rgba(255, 255, 255, .8); }
+.b4 .story { top: 1121px; } .b4 .note { top: 1181px; }
 .b4 .l .lab, .b4 .l .story, .b4 .l .note { left: 48px; } .b4 .r .lab, .b4 .r .story { left: 25px; }
 /* подписи шагов видео: во Figma их нет — вернём, когда будем вставлять видео */
 .b4 .steps { display: none; }
@@ -155,11 +156,11 @@
 .b10 { background: #0e0d13; }
 .b10 { color: #fff; }
 .b10 .lab { font-size: 12px; line-height: 17px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255, 255, 255, .6); white-space: nowrap; }
-.b10 .val { font-size: 20px; line-height: 28px; color: #fff; white-space: nowrap; }
+.b10 .val { font-size: 16px; line-height: 1.4; color: rgba(255, 255, 255, .8); white-space: nowrap; }
 .b10 .f-meta { font-size: 14px; line-height: 19px; text-transform: uppercase; white-space: nowrap; }
-.b10 .f-txt { font-size: 20px; line-height: 28px; }
+.b10 .f-txt { font-size: 16px; line-height: 1.4; color: rgba(255, 255, 255, .8); }
 .b10 blockquote p { margin: 0; } .b10 blockquote p + p { margin-top: 16px; }
-.b10 .f-avatar { position: absolute; left: 48px; top: 467px; width: 48px; height: 48px; display: block; }
+.b10 .f-avatar { position: absolute; left: 48px; top: 431px; width: 48px; height: 48px; display: block; }
 
 /* ---------- Блок 7: компоненты на фото ---------- */
 .b7 { background: #0e0d13; }
@@ -169,7 +170,7 @@
 
 /* ---------- Блок «Структура»: карта сайта ---------- */
 .b5 .s-meta { font-size: 14px; line-height: 19px; text-transform: uppercase; white-space: nowrap; }
-.b5 .s-intro { font-size: 20px; line-height: 28px; }
+.b5 .s-intro { font-size: 16px; line-height: 1.4; }
 .b5 .s-lab { font-size: 12px; line-height: 17px; letter-spacing: .12em; text-transform: uppercase; color: rgba(14, 13, 19, .6); }
 .b5 .s-name { font-size: 20px; line-height: 28px; font-weight: 700; text-transform: uppercase; }
 .b5 .s-desc { font-size: 16px; line-height: 1.4; color: rgba(14, 13, 19, .6); }
@@ -181,7 +182,7 @@
 .b5p .floor { position: absolute; left: 139px; top: 930.7px; width: 1121px; height: 34px; border-radius: 50%; background: rgba(0, 0, 0, .85); filter: blur(18px); }
 .b5p .p-meta { font-size: 14px; line-height: 19px; text-transform: uppercase; white-space: nowrap; }
 .b5p .p-lab { font-size: 12px; line-height: 17px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255, 255, 255, .6); }
-.b5p .p-txt { font-size: 16px; line-height: 1.4; color: #fff; }
+.b5p .p-txt { font-size: 16px; line-height: 1.4; color: rgba(255, 255, 255, .8); }
 .b5p .laptop { position: absolute; left: 48px; top: 87.5px; width: 1303.8px; height: 869.2px; }
 /* экран — место под видео (вставим в конце) */
 .b5p .screen { position: absolute; left: 121.9px; top: 91.6px; width: 1059.9px; height: 685.9px; border-radius: 14px 14px 0 0; overflow: hidden; background: #1f1f24; }
@@ -209,14 +210,14 @@
 .b8p .p8-ipad { position: absolute; left: 290px; top: 265px; width: 820.3px; height: 1070px; }
 .b8p .p8-ui { position: absolute; height: auto; display: block; }
 .b8p .p8-lab { font-size: 12px; line-height: 17px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255, 255, 255, .6); }
-.b8p .p8-txt { font-size: 16px; line-height: 1.4; }
+.b8p .p8-txt { font-size: 16px; line-height: 1.4; color: rgba(255, 255, 255, .8); }
 .b8p .p8-line { background: rgba(255, 255, 255, .6); }
 
 /* ---------- Блок «Корзина и заказ»: экраны на чёрном, свет за ними, два iPhone ---------- */
 .b9c { color: #fff; }
 .b9c .glow { position: absolute; border-radius: 50%; background: #fff; filter: blur(200px); }
 .b9c .c9-meta { font-size: 14px; line-height: 19px; text-transform: uppercase; white-space: nowrap; }
-.b9c .c9-txt { font-size: 20px; line-height: 28px; }
+.b9c .c9-txt { font-size: 16px; line-height: 1.4; color: rgba(255, 255, 255, .8); }
 .b9c .c9-ui { position: absolute; height: auto; display: block; }
 /* iPhone 302 × 615.8: тот же корпус, что в «Сценариях», тени из Figma */
 .b9c .c9-phone { position: absolute; width: 302px; height: 615.8px; border-radius: 49px;
@@ -233,7 +234,7 @@
 .b11 .k-video { position: absolute; left: 24px; top: 24px; width: 460px; height: 769px; overflow: hidden; }
 .b11 .k-video > img, .b11 .k-video > video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
 .b11 .k-hero .play { position: absolute; left: 222px; top: 315px; width: 64px; height: 64px; }
-.b11 .k-txt { font-size: 16px; line-height: 1.4; }
+.b11 .k-txt { font-size: 16px; line-height: 1.4; color: rgba(255, 255, 255, .8); }
 .b11 .k-line { background: rgba(255, 255, 255, .6); }
 .b11 .k-story { position: absolute; left: 178px; top: 1076px; width: 1044px; height: 558.3px; background: #fff; }
 .b11 .k-story img { position: absolute; top: 24px; width: 300px; height: auto; display: block; }
@@ -241,7 +242,7 @@
 /* ---------- Блок «Каталог»: страница и панель фильтров на 85 %, одна подпись ---------- */
 .b6c { background: #fff url("assets/catalog/fabric.jpg") center / cover; }
 .b6c .c-meta { font-size: 14px; line-height: 19px; text-transform: uppercase; white-space: nowrap; }
-.b6c .c-txt { font-size: 20px; line-height: 28px; }
+.b6c .c-txt { font-size: 16px; line-height: 1.4; }
 .b6c .c-page { position: absolute; left: 146px; top: 163px; width: 931.6px; height: auto; display: block; }
 /* панель выгружена в JPG вместе с полями под тени — обрезаем по краю панели, тени рисуем здесь (из Figma × 0,85) */
 .b6c .c-filters { position: absolute; left: 940px; top: 367px; width: 314.5px; height: 890.9px; overflow: hidden; background: #fff;
