@@ -18,16 +18,23 @@
 .screen > img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
 
 /* ---------- Блок 1: первый экран ---------- */
-.b1 { height: 1396px; background: #0b0b0e url("assets/fabric-dark.jpg") center / cover; color: #f2f2f0; }
+.b1 { height: 1456px; background: #0b0b0e url("assets/fabric-dark.jpg") center / cover; color: #f2f2f0; }
 .b1::before { content: ""; position: absolute; inset: 0;
-  background: radial-gradient(ellipse 62% 52% at 50% 36%, rgba(6, 6, 10, .78) 0%, rgba(6, 6, 10, .35) 55%, rgba(6, 6, 10, 0) 100%); }
+  /* виньетка из Figma: прозрачный центр, к краям чёрный 55 % */
+  background: radial-gradient(closest-side at 50% 50%, rgba(0, 0, 0, 0) 51%, rgba(0, 0, 0, .55) 100%); }
 .b1 > * { position: absolute; }
 
 .meta { left: 48px; right: 48px; top: 48px; display: grid; grid-template-columns: 1fr auto 1fr;
   font-size: 14px; line-height: 19px; letter-spacing: .12em; text-transform: uppercase; color: rgba(242, 242, 240, .72); }
 .rule { left: 48px; width: 1304px; height: 1px; background: rgba(242, 242, 240, .2); }
-.b1 .title { left: 154px; top: 134px; width: 1091px; height: 55px; }
-.b1 .subtitle { left: 0; right: 0; top: 212px; text-align: center; font-size: 16px; line-height: 23px; color: #8f8f95; }
+.b1 .title { left: 155.6px; top: 191px; width: 1091px; height: 55px; }
+.b1 .subtitle { left: 0; right: 0; top: 263px; text-align: center; font-size: 16px; line-height: 22px; color: rgba(242, 242, 240, .6); }
+
+/* устройства: PNG из Figma (корпус + экран), координаты по блоку 01 */
+.b1 .device { display: block; height: auto; }
+.device--laptop { left: 100.6px; top: 263.2px; width: 1198.8px; }
+.device--tablet { left: 45.6px; top: 731.9px; width: 304.2px; z-index: 2; }
+.device--phone { left: 1077.6px; top: 508.8px; width: 278.7px; z-index: 2; }
 
 .meta > :nth-child(2) { text-align: center; } .meta > :last-child { text-align: right; }
 
@@ -64,12 +71,12 @@
 .dim i { position: absolute; left: 0; right: 0; top: 5px; height: 1px; background: rgba(242, 242, 240, .35); }
 .dim::before, .dim::after { content: ""; position: absolute; top: 0; width: 1px; height: 11px; background: rgba(242, 242, 240, .35); }
 .dim::before { left: 0; } .dim::after { right: 0; }
-.dim-label { text-align: center; font-size: 14px; line-height: 19px; letter-spacing: .12em; text-transform: uppercase; color: rgba(242, 242, 240, .6); }
+.dim-label { text-align: center; font-size: 12px; line-height: 17px; letter-spacing: .12em; text-transform: uppercase; color: rgba(242, 242, 240, .6); }
 
 /* паспорт проекта */
 .passport .sep { width: 1px; background: rgba(242, 242, 240, .2); }
-.passport .lab { font-size: 12px; line-height: 17px; letter-spacing: .12em; text-transform: uppercase; color: rgba(242, 242, 240, .5); width: 277px; }
-.passport .val { font-size: 16px; line-height: 1.4; color: #f2f2f0; width: 277px; }
+.passport .lab { font-size: 12px; line-height: 17px; letter-spacing: .12em; text-transform: uppercase; color: rgba(242, 242, 240, .6); width: 277px; }
+.passport .val { font-size: 16px; line-height: 1.4; color: rgba(242, 242, 240, .6); width: 277px; }
 
 /* появление блоков */
 .block { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
