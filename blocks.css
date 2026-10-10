@@ -133,9 +133,12 @@
 }
 .b9.is-paused .shot { animation-play-state: paused; }
 
+/* При появлении экран слегка подсвечивается: чуть ярче и мягкое белое свечение вокруг,
+   к полной яркости свечение уходит. */
 @keyframes b9-fade {
-  0%      { opacity: 0; animation-timing-function: linear; }   /* проявление 3,0 с */
-  16.67%  { opacity: 1; animation-timing-function: linear; }   /* полная яркость 1,5 с */
+  0%      { opacity: 0; filter: brightness(1); box-shadow: 0 0 0 rgba(255, 255, 255, 0); animation-timing-function: linear; }   /* проявление 3,0 с */
+  12%     { opacity: .85; filter: brightness(1.18); box-shadow: 0 0 48px rgba(255, 255, 255, .22); animation-timing-function: ease-out; } /* вспышка */
+  16.67%  { opacity: 1; filter: brightness(1); box-shadow: 0 0 0 rgba(255, 255, 255, 0); animation-timing-function: linear; }   /* полная яркость 1,5 с */
   25%     { opacity: 1; animation-timing-function: ease-out; } /* угасание 3,5 с, мягче входа */
   44.44%  { opacity: 0; }
   100%  { opacity: 0; }                                      /* ждёт своей очереди */
