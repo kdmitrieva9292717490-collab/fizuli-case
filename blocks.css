@@ -84,7 +84,7 @@
 @media (prefers-reduced-motion: reduce) { .block { opacity: 1; transform: none; transition: none; } }
 
 /* ---------- Блок «Сценарии»: две половины, запуск по наведению ---------- */
-.b4 { height: 1443px; background: #f2f2f2; color: #0e0d13; }
+.b4 { height: 1427px; background: #f2f2f2; color: #0e0d13; }
 .b4 .light-bg { position: absolute; left: 0; top: 0; width: 900px; height: 100%; background: #f2f2f2 url("assets/fabric-light.jpg") center / cover; background-blend-mode: multiply; }
 .b4 .dark-half { position: absolute; left: 700px; top: 0; width: 700px; height: 100%; background: #17171a url("assets/fabric-dark.jpg") center / cover;
   box-shadow: -6px 0 24px rgba(0, 0, 0, .18), -20px 0 80px rgba(0, 0, 0, .12); }
