@@ -236,3 +236,13 @@
 .b11 .k-line { background: rgba(255, 255, 255, .6); }
 .b11 .k-story { position: absolute; left: 178px; top: 1076px; width: 1044px; height: 558.3px; background: #fff; }
 .b11 .k-story img { position: absolute; top: 24px; width: 300px; height: auto; display: block; }
+
+/* ---------- Блок «Каталог»: страница и панель фильтров на 85 %, одна подпись ---------- */
+.b6c { background: #fff url("assets/catalog/fabric.jpg") center / cover; }
+.b6c .c-meta { font-size: 14px; line-height: 19px; text-transform: uppercase; white-space: nowrap; }
+.b6c .c-txt { font-size: 20px; line-height: 28px; }
+.b6c .c-page { position: absolute; left: 146px; top: 163px; width: 931.6px; height: auto; display: block; }
+/* панель выгружена в JPG вместе с полями под тени — обрезаем по краю панели, тени рисуем здесь (из Figma × 0,85) */
+.b6c .c-filters { position: absolute; left: 940px; top: 367px; width: 314.5px; height: 890.9px; overflow: hidden; background: #fff;
+  box-shadow: 0 3.4px 5.1px -1.7px rgba(0, 0, 0, .03), 0 10.2px 13.6px -3.4px rgba(0, 0, 0, .1); }
+.b6c .c-filters img { position: absolute; left: -8.3px; top: 0; width: 331.1px; height: auto; display: block; }
