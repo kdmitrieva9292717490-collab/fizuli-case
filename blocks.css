@@ -246,3 +246,5 @@
 .b6c .c-filters { position: absolute; left: 940px; top: 367px; width: 314.5px; height: 890.9px; overflow: hidden; background: #fff;
   box-shadow: 0 3.4px 5.1px -1.7px rgba(0, 0, 0, .03), 0 10.2px 13.6px -3.4px rgba(0, 0, 0, .1); }
 .b6c .c-filters img { position: absolute; left: -8.3px; top: 0; width: 331.1px; height: auto; display: block; }
+.b7l .l-lab { font-size: 12px; line-height: 17px; letter-spacing: .12em; text-transform: uppercase; color: rgba(14, 13, 19, .6); white-space: nowrap; }
+.b7l .l-val { font-size: 16px; line-height: 1.4; color: rgba(14, 13, 19, .6); }
