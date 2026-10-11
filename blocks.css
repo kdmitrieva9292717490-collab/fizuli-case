@@ -101,10 +101,11 @@
 /* телефон: корпус iPhone 16 Pro Max из Figma поверх экрана с видео */
 .b4 .phone { position: absolute; z-index: 1; left: 159px; top: 265px; width: 383px; height: 781px; border-radius: 62px; }
 .b4 .phone .screen { position: absolute; left: 16.5px; top: 15.1px; width: 349px; height: 752px; border-radius: 46.2px; overflow: hidden; background: #fff; }
-.b4 .phone video { display: block; width: 100%; height: 100%; object-fit: cover; }
+/* видео ниже выреза: сверху полоса под статус-бар, как в экранах Figma (38/275 ширины) */
+.b4 .phone video { position: absolute; left: 0; top: 48px; display: block; width: 100%; height: calc(100% - 48px); object-fit: cover; object-position: top center; }
 .b4 .phone .case { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
-.b4 .l .phone { box-shadow: 0 1px 2px rgba(0,0,0,.02), 0 3px 6px rgba(0,0,0,.025), 0 8px 16px rgba(0,0,0,.03), 0 18px 36px rgba(0,0,0,.04), 0 40px 80px rgba(0,0,0,.05), 0 70px 140px rgba(0,0,0,.04); }
-.b4 .r .phone { box-shadow: 0 1px 2px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.12), 0 8px 16px rgba(0,0,0,.14), 0 18px 36px rgba(0,0,0,.18), 0 40px 80px rgba(0,0,0,.22), 0 70px 140px rgba(0,0,0,.2); }
+.b4 .l .phone .case { filter: drop-shadow(0 3px 6px rgba(0,0,0,.05)) drop-shadow(0 18px 36px rgba(0,0,0,.07)) drop-shadow(0 55px 110px rgba(0,0,0,.08)); }
+.b4 .r .phone .case { filter: drop-shadow(0 3px 6px rgba(0,0,0,.2)) drop-shadow(0 18px 36px rgba(0,0,0,.28)) drop-shadow(0 55px 110px rgba(0,0,0,.3)); }
 .b4 .play { position: absolute; left: 50%; top: 50%; width: 56px; height: 56px; margin: -28px 0 0 -28px; border-radius: 50%; background: rgba(14, 13, 19, .5); transition: opacity .3s ease; }
 .b4 .play::before { content: ""; position: absolute; left: 22px; top: 17px; border-left: 17px solid #fff; border-top: 11px solid transparent; border-bottom: 11px solid transparent; }
 .b4 .half.is-playing .play { opacity: 0; }
@@ -221,7 +222,8 @@
 .b9c .c9-ui { position: absolute; height: auto; display: block; }
 /* iPhone 302 × 615.8: тот же корпус, что в «Сценариях», тени из Figma */
 .b9c .c9-phone { position: absolute; width: 302px; height: 615.8px; border-radius: 49px;
-  box-shadow: 0 .79px 1.58px rgba(0,0,0,.02), 0 2.37px 4.73px rgba(0,0,0,.03), 0 6.31px 12.62px rgba(0,0,0,.03), 0 14.19px 28.39px rgba(0,0,0,.04), 0 31.54px 63.08px rgba(0,0,0,.05), 0 55.2px 110.39px rgba(0,0,0,.04); }
+}
+.b9c .c9-phone .case { filter: drop-shadow(0 2.4px 4.7px rgba(0,0,0,.05)) drop-shadow(0 14px 28px rgba(0,0,0,.07)) drop-shadow(0 43px 87px rgba(0,0,0,.08)); }
 .b9c .c9-phone .scr { position: absolute; left: 13px; top: 11.9px; width: 275.2px; height: 593px; display: block; }
 .b9c .c9-phone .case { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 
@@ -259,3 +261,8 @@
 .stage.pad48 > *:not(.bg):not(.half) { translate: 0 48px; }
 
 .b5p .screen > video { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+/* Старые CSS-мокапы первого блока (.laptop/.tablet/.phone с тенью-прямоугольником)
+   больше не используются, но их правила цеплялись к новым мокапам с теми же классами
+   и давали полупрозрачную окантовку вокруг корпусов. Тень — только по контуру корпуса */
+.b4 .phone, .b5p .laptop { box-shadow: none; border-radius: 0; }
