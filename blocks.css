@@ -266,3 +266,9 @@
    больше не используются, но их правила цеплялись к новым мокапам с теми же классами
    и давали полупрозрачную окантовку вокруг корпусов. Тень — только по контуру корпуса */
 .b4 .phone, .b5p .laptop { box-shadow: none; border-radius: 0; }
+
+/* Шапки блоков — на 48 от верха, нижние строки — на 48 от низа (её решение 11.10):
+   общее правило опускает содержимое на 96, шапку возвращаем, нижнюю строку опускаем ещё на 96 */
+.stage > .hdr:not(.bg):not(.half), .stage.b1 > .meta:not(.bg):not(.half), .stage.b1 > .rule[style*="top:84px"]:not(.bg):not(.half), .stage.b4 > .meta:not(.bg):not(.half) { translate: none; }
+.stage > .foot:not(.bg):not(.half), .stage.b1 > .passport:not(.bg):not(.half), .stage.b1 > .rule[style*="top:1314px"]:not(.bg):not(.half) { translate: 0 192px; }
+.b4 .lab, .b4 .story { translate: 0 96px; }
