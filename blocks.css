@@ -257,3 +257,5 @@
 .stage > *:not(.bg):not(.half) { translate: 0 96px; }
 .b4 .half .content { translate: 0 96px; }
 .stage.pad48 > *:not(.bg):not(.half) { translate: 0 48px; }
+
+.b5p .screen > video { display: block; width: 100%; height: 100%; object-fit: cover; }

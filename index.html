@@ -8,7 +8,7 @@
   <title>Fizuli — редизайн интернет-магазина. Кейс</title>
   <!-- ?v= менять при каждой правке стилей: GitHub Pages отдаёт CSS с кешем на 10 минут,
        и без новой версии браузер держит старый файл при уже новой разметке -->
-  <link rel="stylesheet" href="blocks.css?v=2026-10-11-5">
+  <link rel="stylesheet" href="blocks.css?v=2026-10-11-6">
   <style>
     :root { --black: #0e0d13; }
     * { box-sizing: border-box; }
@@ -192,7 +192,7 @@
         <div class="t p-meta" style="left:48px;top:48px">05  ·  Путь к товару</div>
         <div class="t p-meta" style="right:48px;top:48px;text-align:right">Решения</div>
         <div class="laptop">
-          <div class="screen"><i class="play"></i></div>
+          <div class="screen"><video muted loop playsinline preload="metadata" src="assets/videos/path.mp4"></video></div>
           <img class="case" src="assets/devices/macbook-bezel.png?v=2" alt="Ноутбук: путь от главной до товара">
         </div>
         <div class="r" style="left:48px;top:1000px;width:1304px;height:1px;background:rgba(255,255,255,.2)"></div>
@@ -352,11 +352,9 @@
         <img class="k-bg bg" style="top:937px" src="assets/card/bg-bottom.jpg?v=2" alt="" aria-hidden="true" loading="lazy">
         <div class="t k-meta" style="left:48px;top:48px">11  ·  Карточка товара</div>
         <div class="t k-meta" style="right:48px;top:48px;text-align:right">Система</div>
-        <!-- Герой: место под видео взаимодействия с карточкой. Сейчас — первый кадр (hero.png). Видео вставим в конце:
-             <video src="assets/videos/…mp4" poster="assets/card/hero.png?v=3" muted loop playsinline preload="none"></video> -->
+        <!-- Герой: видео взаимодействия с карточкой (card.mp4), заставка — hero.png -->
         <div class="k-hero">
-          <div class="k-video"><img src="assets/card/hero.png?v=3" alt="Карточка товара: костюм из жатой ткани, 12 500 ₽" loading="lazy"></div>
-          <img class="play" src="assets/icons/play.svg" alt="" aria-hidden="true">
+          <div class="k-video"><video muted loop playsinline preload="metadata" poster="assets/card/hero.png?v=3" src="assets/videos/card.mp4" aria-label="Карточка товара: костюм из жатой ткани, 12 500 ₽"></video></div>
         </div>
         <div class="t k-txt" style="left:133px;top:390.8px;width:240px">Фото листаются по&nbsp;зонам наведения</div>
         <div class="t k-txt" style="left:133px;top:713.3px;width:240px">Размер выбирается прямо на&nbsp;фото</div>
