@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Страница закрыта от поисковиков: открывается только по прямой ссылке -->
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>Fizuli — редизайн интернет-магазина. Кейс</title>
+  <!-- ?v= менять при каждой правке стилей: GitHub Pages отдаёт CSS с кешем на 10 минут,
+       и без новой версии браузер держит старый файл при уже новой разметке -->
+  <link rel="stylesheet" href="blocks.css?v=2026-10-11-9">
+  <style>
+    :root { --black: #0e0d13; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--black); }
+    body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #fff; }
+
+    .case { max-width: 1400px; margin: 0 auto; }
+
+    /* Блок кейса: картинка из Figma 1:1, видео поверх — координаты в процентах
+       от размеров блока в Figma (1400 × высота), чтобы совпадали при любой ширине */
+    .block { position: relative; width: 100%; aspect-ratio: var(--w) / var(--h); overflow: hidden; }
+    .block > img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+    .block video {
+      position: absolute;
+      left: calc(var(--x) / var(--w) * 100%);
+      top: calc(var(--y) / var(--h) * 100%);
+      width: calc(var(--vw) / var(--w) * 100%);
+      height: calc(var(--vh) / var(--h) * 100%);
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Плавное появление блоков при прокрутке */
+    .block { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+    .block.is-visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .block { opacity: 1; transform: none; transition: none; } }
+  </style>
+</head>
+<body>
+  <main class="case">
+
+    <section class="block" aria-label="01 · Первый экран">
+      <div class="stage b1">
+        <div class="abs meta"><span>UX/UI&nbsp;&nbsp;·&nbsp;&nbsp;Редизайн</span><span>2026</span><span>Интернет-магазин одежды</span></div>
+        <div class="abs rule" style="top:84px"></div>
+        <img class="abs title" src="assets/type/title.svg" alt="Редизайн интернет-магазина">
+        <p class="abs subtitle" style="margin:0">От каталога, где сложно найти вещь, — к магазину с понятной структурой</p>
+
+        <img class="abs device device--laptop" src="assets/devices/macbook.png?v=4" alt="Главная страница на десктопе">
+        <img class="abs device device--tablet" src="assets/devices/ipad.png?v=2" alt="Страница товара на планшете">
+        <img class="abs device device--phone" src="assets/devices/iphone.png?v=2" alt="Каталог на телефоне">
+
+        <div class="abs dim" style="left:63px;top:1180px;width:270px"><i></i></div>
+        <div class="abs dim-label" style="left:63px;top:1201px;width:270px">Tablet 768</div>
+        <div class="abs dim" style="left:550px;top:1180px;width:300px"><i></i></div>
+        <div class="abs dim-label" style="left:550px;top:1201px;width:300px">Desktop 1600</div>
+        <div class="abs dim" style="left:1082px;top:1180px;width:270px"><i></i></div>
+        <div class="abs dim-label" style="left:1082px;top:1201px;width:270px">Mobile 375</div>
+
+        <div class="abs rule" style="top:1314px"></div>
+        <div class="abs passport" style="left:48px;top:1314px;width:1304px;height:142px">
+          <div class="abs sep" style="left:326px;top:28px;height:66px"></div>
+          <div class="abs sep" style="left:652px;top:28px;height:66px"></div>
+          <div class="abs sep" style="left:978px;top:28px;height:66px"></div>
+          <div class="abs lab" style="left:0;top:25px">Клиент</div>
+          <div class="abs val" style="left:0;top:50px">Fizuli — бренд повседневной и спортивной одежды</div>
+          <div class="abs lab" style="left:350px;top:25px">Моя роль</div>
+          <div class="abs val" style="left:350px;top:50px">Исследование, UX/UI, адаптив, дизайн-система</div>
+          <div class="abs lab" style="left:676px;top:25px">Задача</div>
+          <div class="abs val" style="left:676px;top:50px">Развести спорт и повседневное</div>
+          <div class="abs lab" style="left:1002px;top:25px">Результат</div>
+          <div class="abs val" style="left:1002px;top:50px">Победа в конкурсе, проект передан в разработку</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-label="Пауза 1" style="--w:1400; --h:874">
+      <img src="assets/images/pause-1.jpg" alt="Мужчина и женщина в рубашках Fizuli — чёрной и белой — у бетонной стены" loading="lazy" style="object-fit:cover">
+    </section>
+
+    <section class="block" aria-label="02 · Бренд и задача">
+      <div class="stage tb b2" style="height:1092px;background:#ffffff">
+        <div class="hdr t" style="left:48px;top:48px;font-size:14px;color:rgb(14,13,19);line-height:19.0px;width:158px;white-space:nowrap">02&nbsp;&nbsp;·&nbsp;&nbsp;БРЕНД И ЗАДАЧА</div>
+        <div class="hdr t" style="left:1192px;top:48px;font-size:14px;color:rgb(14,13,19);line-height:19.0px;width:160px;text-align:right;white-space:nowrap">OQ КЛУБ&nbsp;&nbsp;·&nbsp;&nbsp;КОНКУРС</div>
+        <div class="t" style="left:48px;top:388px;font-size:12px;color:rgba(14,13,19,0.6);line-height:17.0px;letter-spacing:0.12em;width:152px">БРЕНД</div>
+        <div class="t" style="left:200px;top:383px;font-size:16px;color:rgb(14,13,19);line-height:1.4;width:476px">Fizuli — российский бренд повседневной и&nbsp;спортивной одежды. Вещи шьют на&nbsp;собственной мануфактуре по&nbsp;выверенным&nbsp;лекалам.</div>
+        <div class="t" style="left:48px;top:478px;font-size:12px;color:rgba(14,13,19,0.6);line-height:17.0px;letter-spacing:0.12em;width:152px">ПРОБЛЕМА</div>
+        <div class="t" style="left:200px;top:473px;font-size:16px;color:rgb(14,13,19);line-height:1.4;width:476px">Спортивная линия даёт основные продажи, повседневную бренд хочет развивать. На&nbsp;сайте обе линии лежали в&nbsp;одном каталоге, и&nbsp;покупателю приходилось листать&nbsp;всё&nbsp;подряд.</div>
+        <div class="t" style="left:48px;top:568px;font-size:12px;color:rgba(14,13,19,0.6);line-height:17.0px;letter-spacing:0.12em;width:152px">ЗАДАЧА</div>
+        <div class="t" style="left:200px;top:563px;font-size:16px;color:rgb(14,13,19);line-height:1.4;width:476px">Развести две линии так, чтобы нужная вещь находилась легко, и&nbsp;сохранить премиальность: без&nbsp;распродаж и&nbsp;зачёркнутых&nbsp;цен.</div>
+        <div class="t" style="left:1051px;top:589px;font-size:14px;color:rgba(14,13,19,0.6);line-height:1.4;width:277px">Конкурс OQ клуба Сергея&nbsp;Оршака. Бриф&nbsp;от&nbsp;сооснователя бренда.</div>
+        <img class="foot t" src="assets/type/n-2130-23361.svg" alt="10" style="left:52.68px;top:712.4px;width:81.0px;height:44.0px">
+        <div class="foot t" style="left:48px;top:783px;font-size:12px;color:rgba(14,13,19,0.6);line-height:17.0px;letter-spacing:0.12em;width:277px">СТРАНИЦ В&nbsp;АУДИТЕ</div>
+        <div class="foot t" style="left:48px;top:808px;font-size:16px;color:rgb(14,13,19);line-height:1.4;width:277px">Нашла места, где покупатель&nbsp;теряется</div>
+        <img class="foot t" src="assets/type/n-2130-23364.svg" alt="6" style="left:402.78px;top:713px;width:44.0px;height:43.0px">
+        <div class="foot t" style="left:399px;top:783px;font-size:12px;color:rgba(14,13,19,0.6);line-height:17.0px;letter-spacing:0.12em;width:277px">КОНКУРЕНТОВ</div>
+        <div class="foot t" style="left:399px;top:808px;font-size:16px;color:rgb(14,13,19);line-height:1.4;width:277px">Взяла понятную структуру каталога и&nbsp;крупные карточки</div>
+        <img class="foot t" src="assets/type/n-2130-23367.svg" alt="2" style="left:728.6px;top:713px;width:41.0px;height:42.0px">
+        <div class="foot t" style="left:725px;top:783px;font-size:12px;color:rgba(14,13,19,0.6);line-height:17.0px;letter-spacing:0.12em;width:277px">СЦЕНАРИЯ ПОКУПКИ</div>
+        <div class="foot t" style="left:725px;top:808px;font-size:16px;color:rgb(14,13,19);line-height:1.4;width:277px">Быстрая покупка товара и&nbsp;покупка образа</div>
+        <img class="foot t" src="assets/type/n-2130-23370.svg" alt="0" style="left:1056.1px;top:712.4px;width:44.0px;height:44.0px">
+        <div class="foot t" style="left:1051px;top:783px;font-size:12px;color:rgba(14,13,19,0.6);line-height:17.0px;letter-spacing:0.12em;width:277px">СКИДОК</div>
+        <div class="foot t" style="left:1051px;top:808px;font-size:16px;color:rgb(14,13,19);line-height:1.4;width:277px">Главное правило бренда: премиальность без&nbsp;распродаж</div>
+        <div class="foot r" style="left:48px;top:677px;width:1304px;height:1px;background:rgba(14,13,19,0.2)"></div>
+        <div class="foot r" style="left:374px;top:705px;width:1px;height:147px;background:rgba(14,13,19,0.2)"></div>
+        <div class="foot r" style="left:700px;top:705px;width:1px;height:147px;background:rgba(14,13,19,0.2)"></div>
+        <div class="foot r" style="left:1026px;top:705px;width:1px;height:147px;background:rgba(14,13,19,0.2)"></div>
+      </div>
+    </section>
+
+    <section class="block" aria-label="03 · Сценарии">
+      <div class="stage b4">
+        <div class="light-bg bg"></div>
+        <div class="dark-half bg"></div>
+        <div class="abs meta"><span>03&nbsp;&nbsp;·&nbsp;&nbsp;Сценарии</span><span></span><span>Исследование</span></div>
+
+        <div class="half l" data-half>
+          <div class="content">
+            <img class="head" src="assets/type/n-2214-19126.svg" alt="Повседневное" style="width:442px">
+            <div class="phone">
+              <div class="screen"><video data-hover muted loop playsinline preload="auto" src="assets/videos/scenario-casual.mp4#t=0.1" data-steps='[[0,"Главная"],[4,"Готовые образы"],[7,"Размеры"],[12,"Корзина"]]'></video></div>
+              <img class="case" src="assets/devices/iphone-bezel.png" alt="">
+              <i class="play"></i>
+            </div>
+            <div class="lab">Покупка образа</div>
+            <p class="story">Когда я выбираю вещь для города,<br>хочу видеть её в&nbsp;образе,<br>чтобы понять, с&nbsp;чем её носить</p>
+            <div class="steps"></div>
+          </div>
+        </div>
+
+        <div class="half r" data-half>
+          <div class="content">
+            <img class="head" src="assets/type/n-2214-19474.svg" alt="Спорт" style="width:179px">
+            <div class="phone">
+              <div class="screen"><video data-hover muted loop playsinline preload="auto" src="assets/videos/scenario-sport.mp4#t=0.1" data-steps='[[0,"Главная"],[2.5,"Меню"],[6,"Каталог"],[9.5,"Фильтры"],[14,"Результат"]]'></video></div>
+              <img class="case" src="assets/devices/iphone-bezel.png" alt="">
+              <i class="play"></i>
+            </div>
+            <div class="lab">Быстрая покупка</div>
+            <p class="story">Когда я прихожу за&nbsp;вещью для тренировки,<br>хочу сразу попасть в&nbsp;нужную категорию,<br>чтобы не&nbsp;листать весь каталог</p>
+            <div class="steps"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-label="04 · Структура">
+      <div class="stage tb b5" style="height:1252px;background:#ffffff">
+        <div class="hdr t s-meta" style="left:48px;top:48px;width:300px">04  ·  Структура</div>
+        <div class="hdr t s-meta" style="right:48px;top:48px;text-align:right">Решения</div>
+        <div class="t s-intro" style="left:725px;top:163px;width:627px">Главный вход&nbsp;— «Мужчинам» и&nbsp;«Женщинам».<br>Внутри каждого раздела две линии&nbsp;— повседневная и&nbsp;спортивная.<br>Аксессуары и&nbsp;детское вынесла на&nbsp;отдельные страницы, так как товаров мало.</div>
+        <div class="t s-lab" style="left:48px;top:325px;width:600px">Карта сайта после редизайна</div>
+        <div class="r" style="left:48px;top:366px;width:1304px;height:646px;background:#f6f6f6"></div>
+        <div class="r" style="left:72px;top:390px;width:1256px;height:72px;background:#0e0d13"></div>
+        <div class="t s-lab on-dark" style="left:96px;top:420px;width:80px">Шапка</div>
+        <div class="t s-name on-dark" style="left:178px;top:414px;width:500px">Мужчинам  ·  Женщинам</div>
+        <div class="t s-meta on-dark-60" style="right:96px;top:419px;text-align:right">Поиск  ·  Избранное  ·  Корзина  ·  Кабинет</div>
+        <div class="t s-lab" style="left:72px;top:502px;width:600px">Внутри «Мужчинам» и «Женщинам»</div>
+        <div class="r" style="left:72px;top:535px;width:302px;height:200px;background:#0e0d13"></div>
+        <div class="t s-name on-dark" style="left:96px;top:559px;width:254px">Новинки</div>
+        <div class="t s-desc on-dark-60" style="left:96px;top:595px;width:254px">Общие для обеих линий, без аксессуаров.</div>
+        <div class="r" style="left:390px;top:535px;width:302px;height:200px;background:#0e0d13"></div>
+        <div class="t s-name on-dark" style="left:414px;top:559px;width:254px">Повседневное</div>
+        <div class="t s-desc on-dark-60" style="left:414px;top:595px;width:254px">Тип вещи открывает каталог с&nbsp;готовым фильтром.</div>
+        <div class="r" style="left:708px;top:535px;width:302px;height:200px;background:#0e0d13"></div>
+        <div class="t s-name on-dark" style="left:732px;top:559px;width:254px">Спортивное</div>
+        <div class="t s-desc on-dark-60" style="left:732px;top:595px;width:254px">Тип вещи открывает каталог с&nbsp;готовым фильтром.</div>
+        <div class="r" style="left:1026px;top:535px;width:302px;height:200px;background:#0e0d13"></div>
+        <div class="t s-name on-dark" style="left:1050px;top:559px;width:254px">Коллекции</div>
+        <div class="t s-desc on-dark-60" style="left:1050px;top:595px;width:254px">Patchi, Sensei, Hybrid Athletic Club. Открывают каталог с&nbsp;фильтром по&nbsp;коллекции.</div>
+        <div class="t s-lab" style="left:72px;top:775px;width:600px">Отдельные страницы и разделы</div>
+        <div class="r" style="left:72px;top:808px;width:302px;height:180px;background:#ffffff"></div>
+        <div class="t s-name" style="left:96px;top:832px;width:254px">Аксессуары и детям</div>
+        <div class="t s-desc" style="left:96px;top:868px;width:254px">Общие для мужчин и&nbsp;женщин&nbsp;— товаров мало.</div>
+        <div class="r" style="left:390px;top:808px;width:302px;height:180px;background:#ffffff"></div>
+        <div class="t s-name" style="left:414px;top:832px;width:254px">Покупателям</div>
+        <div class="t s-desc" style="left:414px;top:868px;width:254px">Доставка, оплата и&nbsp;возврат&nbsp;— вкладки одной страницы.</div>
+        <div class="r" style="left:708px;top:808px;width:302px;height:180px;background:#ffffff"></div>
+        <div class="t s-name" style="left:732px;top:832px;width:254px">Бренд</div>
+        <div class="t s-desc" style="left:732px;top:868px;width:254px">О&nbsp;бренде, партнёрам, магазины, журнал.</div>
+        <div class="r" style="left:1026px;top:808px;width:302px;height:180px;background:#ffffff"></div>
+        <div class="t s-name" style="left:1050px;top:832px;width:254px">Покупка</div>
+        <div class="t s-desc" style="left:1050px;top:868px;width:254px">Поиск, корзина, оформление заказа, избранное, кабинет.</div>
+      </div>
+    </section>
+
+    <section class="block" aria-label="05 · Путь к товару">
+      <div class="stage tb b5p" style="height:1423px;background:#0e0d13">
+        <div class="glow"></div>
+        <div class="floor"></div>
+        <div class="hdr t p-meta" style="left:48px;top:48px">05  ·  Путь к товару</div>
+        <div class="hdr t p-meta" style="right:48px;top:48px;text-align:right">Решения</div>
+        <div class="laptop">
+          <div class="screen"><video muted loop playsinline preload="metadata" src="assets/videos/path.mp4"></video></div>
+          <img class="case" src="assets/devices/macbook-bezel.png?v=2" alt="Ноутбук: путь от главной до товара">
+        </div>
+        <div class="foot r" style="left:48px;top:1000px;width:1304px;height:1px;background:rgba(255,255,255,.2)"></div>
+        <div class="foot r" style="left:374px;top:1028px;width:1px;height:155px;background:rgba(255,255,255,.2)"></div>
+        <div class="foot r" style="left:700px;top:1028px;width:1px;height:155px;background:rgba(255,255,255,.2)"></div>
+        <div class="foot r" style="left:1026px;top:1028px;width:1px;height:155px;background:rgba(255,255,255,.2)"></div>
+        <img class="foot t" src="assets/type/n-2214-20175.svg" alt="01" style="left:53.1px;top:1035.4px;width:84px;height:44px">
+        <div class="foot t p-lab" style="left:48px;top:1106px;width:277px">Главная</div>
+        <div class="foot t p-txt" style="left:48px;top:1131px;width:277px">Мужское и&nbsp;женское&nbsp;— сразу в&nbsp;шапке</div>
+        <img class="foot t" src="assets/type/n-2214-20178.svg" alt="02" style="left:404.1px;top:1035.4px;width:90px;height:44px">
+        <div class="foot t p-lab" style="left:399px;top:1106px;width:277px">Мегаменю</div>
+        <div class="foot t p-txt" style="left:399px;top:1131px;width:277px">Линии и&nbsp;категории видны целиком, без второго уровня по&nbsp;наведению</div>
+        <img class="foot t" src="assets/type/n-2214-20181.svg" alt="03" style="left:730.1px;top:1035.4px;width:90px;height:44px">
+        <div class="foot t p-lab" style="left:725px;top:1106px;width:277px">Каталог</div>
+        <div class="foot t p-txt" style="left:725px;top:1131px;width:277px">Фильтр уже отмечен: открылось ровно то, что выбрали</div>
+        <img class="foot t" src="assets/type/n-2214-20184.svg" alt="04" style="left:1056.1px;top:1035.4px;width:98px;height:44px">
+        <div class="foot t p-lab" style="left:1051px;top:1106px;width:277px">Товар</div>
+        <div class="foot t p-txt" style="left:1051px;top:1131px;width:277px">В&nbsp;карточке товара выбор цвета и&nbsp;размера закреплён рядом с&nbsp;фото</div>
+      </div>
+    </section>
+
+    <section class="block" aria-label="06 · Каталог">
+      <div class="stage tb b6c" style="height:1498px">
+        <div class="hdr t c-meta" style="left:48px;top:48px">06  ·  Каталог</div>
+        <div class="hdr t c-meta" style="right:48px;top:48px;text-align:right">Решения</div>
+        <img class="c-page" src="assets/catalog/page.jpg?v=4" alt="Каталог повседневной линии: карточки с цветами, плитка Process, кардиган «нет в наличии»" loading="lazy">
+        <div class="c-filters"><img src="assets/catalog/filters.jpg" alt="Панель фильтров: назначение, коллекция, категории, цена, цвет, размер" loading="lazy"></div>
+        <div class="t c-txt" style="left:146px;top:1182px;width:627px">Фильтры меняют выдачу сразу. Цвет и&nbsp;размер выбираются прямо на&nbsp;карточке&nbsp;— вещь добавляется в&nbsp;корзину без перехода на&nbsp;страницу товара.</div>
+      </div>
+    </section>
+
+    <section class="block" aria-label="07 · Лукбук">
+      <div class="stage tb b7l" style="height:1504px;background:#ffffff">
+        <div class="hdr t l-meta" style="left:48px;top:48px">07  ·  Лукбук</div>
+        <div class="hdr t l-meta" style="right:48px;top:48px;text-align:right">Решения</div>
+        <!-- Блок статичный: экран «Готовые образы» без видео (решение 11.10). -->
+        <div class="l-video">
+          <img class="poster" src="assets/lookbook/poster.jpg?v=4" alt="Страница «Готовые образы»: образы на моделях, вещи из образа можно сразу положить в корзину" loading="lazy">
+        </div>
+        <div class="foot r" style="left:48px;top:1127px;width:1304px;height:1px;background:rgba(14,13,19,0.2)"></div>
+        <div class="foot r" style="left:374px;top:1155px;width:1px;height:109px;background:rgba(14,13,19,0.2)"></div>
+        <div class="foot r" style="left:700px;top:1155px;width:1px;height:109px;background:rgba(14,13,19,0.2)"></div>
+        <div class="foot r" style="left:1026px;top:1155px;width:1px;height:109px;background:rgba(14,13,19,0.2)"></div>
+        <div class="foot t l-lab" style="left:48px;top:1151px">Для него и&nbsp;для неё</div>
+        <div class="foot t l-val" style="left:48px;top:1176px;width:302px">Мужские и&nbsp;женские образы<br>разделены вкладками.</div>
+        <div class="foot t l-lab" style="left:398px;top:1151px">Точки на&nbsp;фото</div>
+        <div class="foot t l-val" style="left:398px;top:1176px;width:278px">Точки отмечают, что надето на&nbsp;модели. По&nbsp;нажатию открывается карточка товара с&nbsp;ценой.</div>
+        <div class="foot t l-lab" style="left:724px;top:1151px">Купить образ</div>
+        <div class="foot t l-val" style="left:724px;top:1176px;width:278px">Кнопка добавляет в&nbsp;корзину<br>весь образ.</div>
+        <div class="foot t l-lab" style="left:1050px;top:1151px">Размеры</div>
+        <div class="foot t l-val" style="left:1050px;top:1176px;width:278px">Размер выбирается отдельно для&nbsp;каждого товара из&nbsp;образа.</div>
+      </div>
+    </section>
+
+    <section class="block" aria-label="08 · Страница товара">
+      <div class="stage tb b8p" style="height:2245px">
+        <div class="hdr t p8-meta" style="left:48px;top:48px">08  ·  Страница товара</div>
+        <div class="hdr t p8-meta" style="right:48px;top:48px;text-align:right">Решения</div>
+        <!-- Экран планшета — контейнер: видео модели встанет поверх второго фото галереи (подпись «Видео вместо фото»). -->
+        <div class="p8-screen"><img src="assets/product/screen.jpg?v=3" alt="Страница товара на планшете: галерея, цена, выбор цвета и размера" loading="lazy"></div>
+        <img class="p8-ipad" src="assets/product/ipad-bezel.png" alt="" aria-hidden="true" loading="lazy">
+        <img class="p8-ui" style="left:898px;top:943px;width:368px" src="assets/product/lightbox.png" alt="Увеличенное фото ткани" loading="lazy">
+        <img class="p8-ui" style="left:48px;top:1533px;width:302px" src="assets/product/choice.png" alt="Блок выбора: цена 12 500 ₽, 4 платежа по 3 125 ₽, цвет, размер, кнопка «Добавить в корзину»" loading="lazy">
+        <img class="p8-ui" style="left:374px;top:1611px;width:302px" src="assets/product/accordion.png" alt="Раскрывающиеся списки: состав и уход, доставка, обмен и возврат" loading="lazy">
+        <img class="p8-ui" style="left:700px;top:1565px;width:652px" src="assets/product/complete-look.png?v=3" alt="Блок «Дополнить образ»: футболки, кепка, носки" loading="lazy">
+        <div class="t p8-lab" style="left:48px;top:438px;width:210px">Видео вместо фото</div>
+        <div class="t p8-txt" style="left:48px;top:463px;width:210px">Короткое видео в&nbsp;галерее показывает посадку в&nbsp;движении.</div>
+        <div class="t p8-lab" style="left:48px;top:716px;width:210px">Галерея</div>
+        <div class="t p8-txt" style="left:48px;top:741px;width:210px">Фото идут лентой и&nbsp;листаются свайпом. Полоса снизу показывает, сколько кадров осталось.</div>
+        <div class="t p8-lab" style="left:48px;top:1041px;width:210px">Оплата частями</div>
+        <div class="t p8-txt" style="left:48px;top:1066px;width:210px">У&nbsp;цены — число платежей и&nbsp;сумма каждого.</div>
+        <div class="t p8-lab" style="left:1137px;top:779px;width:226px">Увеличение фото</div>
+        <div class="t p8-txt" style="left:1137px;top:804px;width:226px">Любое фото открывается крупно&nbsp;— можно детально рассмотреть ткань.</div>
+        <div class="t p8-lab" style="left:48px;top:1892px;width:304px">Блок выбора</div>
+        <div class="t p8-txt" style="left:48px;top:1917px;width:304px">Цвет, размер, цена и&nbsp;кнопка собраны вместе. На&nbsp;десктопе блок закреплён справа и&nbsp;не уходит при прокрутке&nbsp;галереи.</div>
+        <div class="t p8-lab" style="left:375px;top:1892px;width:325px">Раскрывающиеся списки</div>
+        <div class="t p8-txt" style="left:375px;top:1917px;width:201px">Уход, доставка и&nbsp;возврат свёрнуты и&nbsp;не отвлекают от&nbsp;выбора.</div>
+        <div class="t p8-lab" style="left:700px;top:1892px;width:326px">Дополнить образ</div>
+        <div class="t p8-txt" style="left:700px;top:1917px;width:652px">Внизу страницы&nbsp;— «Дополнить образ» и&nbsp;«Вы недавно смотрели»:<br>к&nbsp;покупке можно добавить товары из&nbsp;образа.</div>
+        <div class="r p8-line" style="left:266px;top:438px;width:65px;height:1px"></div>
+        <div class="r p8-line" style="left:266px;top:724px;width:65px;height:1px"></div>
+        <div class="r p8-line" style="left:266px;top:1049px;width:65px;height:1px"></div>
+        <div class="r p8-line" style="left:1137px;top:878px;width:1px;height:65px"></div>
+      </div>
+    </section>
+
+    <section class="block" aria-label="09 · Корзина и заказ">
+      <div class="stage tb b9c" style="height:2577px;background:#0e0d13">
+        <div class="glow" style="left:-17.2px;top:233px;width:1434.4px;height:840px;opacity:.1"></div>
+        <div class="glow" style="left:-17.2px;top:991.3px;width:1434.4px;height:716.9px;opacity:.1"></div>
+        <div class="glow" style="left:15.4px;top:1659.4px;width:718.3px;height:739px;opacity:.07"></div>
+        <div class="hdr t c9-meta" style="left:48px;top:48px">09  ·  Корзина и заказ</div>
+        <div class="hdr t c9-meta" style="right:48px;top:48px;text-align:right">Решения</div>
+        <div class="t c9-txt" style="left:725px;top:163px;width:627px">Вход&nbsp;— по&nbsp;номеру телефона и&nbsp;коду из&nbsp;СМС, без&nbsp;пароля. Оформление&nbsp;— на&nbsp;одной странице: доставка по&nbsp;России, в&nbsp;СНГ или самовывоз.</div>
+        <img class="c9-ui" style="left:48px;top:303px;width:1304px" src="assets/cart/cart.jpg?v=4" alt="Корзина на десктопе: костюм 12 500 ₽, носки, итог 14 420 ₽" loading="lazy">
+        <img class="c9-ui" style="left:48px;top:1051px;width:860px" src="assets/cart/checkout.jpg?v=4" alt="Оформление заказа на одной странице: доставка по России, самовывоз, СНГ" loading="lazy">
+        <img class="c9-ui" style="left:940px;top:1051px;width:412px" src="assets/cart/login.png" alt="Окно входа по номеру телефона и коду из СМС" loading="lazy">
+        <div class="t c9-txt" style="left:725px;top:1721px;width:627px">На&nbsp;мобильном корзина и&nbsp;оформление&nbsp;— те&nbsp;же шаги,<br>собранные в&nbsp;одну колонку.</div>
+        <div class="c9-phone" style="left:48px;top:1721px">
+          <img class="scr" src="assets/cart/phone-cart.png?v=2" alt="Корзина на телефоне" loading="lazy">
+          <img class="case" src="assets/devices/iphone-bezel.png" alt="" aria-hidden="true" loading="lazy">
+        </div>
+        <div class="c9-phone" style="left:399px;top:1721px">
+          <img class="scr" src="assets/cart/phone-checkout.png" alt="Оформление заказа на телефоне" loading="lazy">
+          <img class="case" src="assets/devices/iphone-bezel.png" alt="" aria-hidden="true" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-label="Пауза 2" style="--w:1400; --h:1200">
+      <img src="assets/images/pause-2.jpg" alt="Мужчина в джинсовом костюме Fizuli у бетонной стены" loading="lazy" style="object-fit:cover">
+    </section>
+
+    <section class="block" aria-label="10 · Цвет и типографика">
+      <div class="stage tb b6" style="height:1326px;background:#ffffff">
+        <div class="r bg" style="left:0px;top:786px;width:700px;height:540px;background:rgb(255,255,255)"></div>
+        <div class="r bg" style="left:0px;top:556px;width:700px;height:230px;background:rgb(246,246,246)"></div>
+        <div class="r bg" style="left:0px;top:426px;width:700px;height:130px;background:rgb(200,200,200)"></div>
+        <div class="r bg" style="left:0px;top:296px;width:700px;height:130px;background:rgb(117,117,117)"></div>
+        <div class="r bg" style="left:0px;top:0px;width:700px;height:296px;background:rgb(14,13,19)"></div>
+        <div class="r bg" style="left:700px;top:0px;width:700px;height:1326px;background:rgb(246,246,246)"></div>
+        <div class="hdr t" style="left:1282px;top:48px;font-size:14px;color:rgb(14,13,19);line-height:19.0px;width:70px;white-space:nowrap">СИСТЕМА</div>
+        <div class="t" style="left:725px;top:140px;font-size:12px;color:rgba(14,13,19,0.6);line-height:17.0px;width:111px;white-space:nowrap">TT Supermolot Neue</div>
+        <div class="t" style="left:725px;top:160px;font-size:16px;color:rgb(14,13,19);line-height:22.0px;width:128px;white-space:nowrap">Заголовки, цены</div>
+        <div class="t" style="left:1051px;top:140px;font-size:12px;color:rgba(14,13,19,0.6);line-height:17.0px;width:50px;white-space:nowrap">Helvetica</div>
+        <div class="t" style="left:1051px;top:160px;font-size:16px;color:rgb(14,13,19);line-height:1.4;width:277px">Текст интерфейса, кнопки, навигация</div>
+        <div class="t" style="left:725px;top:260px;font-size:12px;color:rgba(14,13,19,0.6);line-height:17.0px;width:166px;white-space:nowrap">Desktop/Title/H1 Hero · 52 · Db</div>
+        <img class="t" src="assets/type/n-2146-16474.svg" alt="SENSEI" style="left:728.38px;top:297.6px;width:247.0px;height:37.0px">
+        <div class="t" style="left:725px;top:379px;font-size:12px;color:rgba(14,13,19,0.6);line-height:17.0px;width:180px;white-space:nowrap">Desktop/Title/H2 Section · 32 · Db</div>
+        <img class="t" src="assets/type/n-2146-16476.svg" alt="НОВИНКИ" style="left:728.04px;top:411.28px;width:218.0px;height:24.0px">
+        <div class="t" style="left:725px;top:474px;font-size:12px;color:rgba(14,13,19,0.6);line-height:17.0px;width:187px;white-space:nowrap">Desktop/Body/Db20 Price · 20 · Db</div>
+        <img class="t" src="assets/type/n-2146-16478.svg" alt="12 500 ₽" style="left:726.5px;top:503.8px;width:112.0px;height:15.0px">
+        <div class="t" style="left:725px;top:555px;font-size:12px;color:rgba(14,13,19,0.6);line-height:17.0px;width:176px;white-space:nowrap">Desktop/Body/R16 · 16 · Regular</div>
+        <div class="t" style="left:725px;top:580px;font-size:16px;color:rgb(14,13,19);line-height:22.0px;width:181px;white-space:nowrap">Костюм из&nbsp;жатой ткани</div>
+        <div class="t" style="left:725px;top:634px;font-size:12px;color:rgba(14,13,19,0.6);line-height:17.0px;width:212px;white-space:nowrap">Desktop/Body/R14 CAPS · 14 · Regular</div>
+        <div class="t" style="left:725px;top:659px;font-size:14px;color:rgb(14,13,19);line-height:19.0px;width:149px;white-space:nowrap">ПЕРЕЙТИ В&nbsp;КАТАЛОГ</div>
+        <img class="t" src="assets/type/n-2146-16483.svg" alt="Aa" style="left:734px;top:816px;width:575.0px;height:256.0px">
+        <div class="t" style="left:48px;top:159px;font-size:12px;color:rgba(255,255,255,0.6);line-height:17.0px;width:171px;white-space:nowrap;letter-spacing:0.12em;text-transform:uppercase">Основной: текст, кнопки, фон</div>
+        <div class="t" style="left:48px;top:127px;font-size:20px;color:rgb(255,255,255);line-height:28.0px;width:84px;white-space:nowrap;font-weight:700">#0E0D13</div>
+        <div class="t" style="left:48px;top:289px;font-size:12px;color:rgba(255,255,255,0.6);line-height:17.0px;width:177px;white-space:nowrap;letter-spacing:0.12em;text-transform:uppercase">Второстепенный текст, иконки</div>
+        <div class="t" style="left:48px;top:257px;font-size:20px;color:rgb(255,255,255);line-height:28.0px;width:78px;white-space:nowrap;font-weight:700">#757575</div>
+        <div class="t" style="left:48px;top:419px;font-size:12px;color:rgba(14,13,19,0.6);line-height:17.0px;width:123px;white-space:nowrap;letter-spacing:0.12em;text-transform:uppercase">Неактивное, обводки</div>
+        <div class="t" style="left:48px;top:387px;font-size:20px;color:rgb(14,13,19);line-height:28.0px;width:88px;white-space:nowrap;font-weight:700">#C8C8C8</div>
+        <div class="t" style="left:48px;top:649px;font-size:12px;color:rgba(14,13,19,0.6);line-height:17.0px;width:136px;white-space:nowrap;letter-spacing:0.12em;text-transform:uppercase">Фоны карточек и&nbsp;полей</div>
+        <div class="t" style="left:48px;top:617px;font-size:20px;color:rgb(14,13,19);line-height:28.0px;width:82px;white-space:nowrap;font-weight:700">#F6F6F6</div>
+        <div class="t" style="left:48px;top:1059px;font-size:12px;color:rgba(14,13,19,0.6);line-height:17.0px;width:73px;white-space:nowrap;letter-spacing:0.12em;text-transform:uppercase">Фон страниц</div>
+        <div class="t" style="left:48px;top:1027px;font-size:20px;color:rgb(14,13,19);line-height:28.0px;width:85px;white-space:nowrap;font-weight:700">#FFFFFF</div>
+        <div class="r" style="left:628px;top:1028px;width:24px;height:24px;background:rgb(200,5,0)"></div>
+        <div class="t" style="left:479px;top:1031.5px;font-size:12px;color:rgba(14,13,19,0.6);line-height:17.0px;width:135px;white-space:nowrap;letter-spacing:0.12em;text-transform:uppercase">#C80500 · ошибки</div>
+        <div class="hdr t" style="left:48px;top:48px;font-size:14px;color:rgb(255,255,255);line-height:19.0px;width:198px;white-space:nowrap">10&nbsp;&nbsp;·&nbsp;&nbsp;ЦВЕТ И ТИПОГРАФИКА</div>
+      </div>
+    </section>
+
+    <section class="block" aria-label="11 · Карточка товара">
+      <div class="stage tb b11" style="height:1874px">
+        <img class="k-bg bg" style="top:0" src="assets/card/bg-top.jpg?v=2" alt="" aria-hidden="true" loading="lazy">
+        <img class="k-bg bg" style="top:937px" src="assets/card/bg-bottom.jpg?v=2" alt="" aria-hidden="true" loading="lazy">
+        <div class="hdr t k-meta" style="left:48px;top:48px">11  ·  Карточка товара</div>
+        <div class="hdr t k-meta" style="right:48px;top:48px;text-align:right">Система</div>
+        <!-- Герой: видео взаимодействия с карточкой (card.mp4), заставка — hero.png -->
+        <div class="k-hero">
+          <div class="k-video"><video muted loop playsinline preload="metadata" poster="assets/card/hero.png?v=3" src="assets/videos/card.mp4" aria-label="Карточка товара: костюм из жатой ткани, 12 500 ₽"></video></div>
+        </div>
+        <div class="t k-txt" style="left:133px;top:390.8px;width:240px">Фото листаются по&nbsp;зонам наведения</div>
+        <div class="t k-txt" style="left:133px;top:713.3px;width:240px">Размер выбирается прямо на&nbsp;фото</div>
+        <div class="t k-txt" style="left:133px;top:930px;width:240px">Цена без зачёркнутых</div>
+        <div class="t k-txt" style="left:1027px;top:206px;width:240px">Избранное — в&nbsp;один клик</div>
+        <div class="t k-txt" style="left:1027px;top:713.3px;width:240px">Корзина появляется при&nbsp;наведении на&nbsp;карточку</div>
+        <div class="t k-txt" style="left:1027px;top:851px;width:240px">Свотч меняет цвет на&nbsp;фото</div>
+        <div class="r k-line" style="left:381px;top:412.8px;width:65px;height:1px"></div>
+        <div class="r k-line" style="left:381px;top:735.3px;width:65px;height:1px"></div>
+        <div class="r k-line" style="left:381px;top:941px;width:65px;height:1px"></div>
+        <div class="r k-line" style="left:954px;top:217px;width:65px;height:1px"></div>
+        <div class="r k-line" style="left:954px;top:735.3px;width:65px;height:1px"></div>
+        <div class="r k-line" style="left:954px;top:862px;width:65px;height:1px"></div>
+        <div class="k-story">
+          <img style="left:24px" src="assets/card/frame-1.png?v=3" alt="Кадр 1: обычная карточка" loading="lazy">
+          <img style="left:372px" src="assets/card/frame-2.png?v=3" alt="Кадр 2: выбор размера на фото, товар в избранном" loading="lazy">
+          <img style="left:720px" src="assets/card/frame-3.png?v=3" alt="Кадр 3: нет в наличии, «Уведомить о поступлении»" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Все экраны. Блок декоративный, шапки нет: он идёт перед последним блоком с контактами.
+         Сетка 3×3, двенадцать экранов проступают из темноты по очереди:
+         каждый живёт 8 с (проявление 3 с, полная яркость 1,5 с, угасание 3,5 с), новый
+         стартует каждые 1,8 с, полный круг 21,6 с. Одновременно видно 4–5 из девяти.
+         Порядок задан руками (--i), а не случайно, чтобы свет не полз по соседним ячейкам.
+         Ячейка повторяется не раньше чем через 6 шагов (10,8 с) — наложений нет.
+         Тайминги взяты из замеров видео-референса, см. ТЗ-блок-09-анимация.md -->
+    <section class="block" aria-label="09 · Все экраны">
+      <div class="stage b9 pad48" style="height:1109px">
+        <img class="shot is-static" style="left:507px;top:386px;--i:0"  src="assets/screens/s01.jpg" alt="Главная" loading="lazy" decoding="async">
+        <img class="shot is-static" style="left:73px;top:96px;--i:1"    src="assets/screens/s03.jpg" alt="Каталог — повседневная линия" loading="lazy" decoding="async">
+        <img class="shot is-static" style="left:941px;top:676px;--i:2"  src="assets/screens/s05.jpg" alt="Карточка товара" loading="lazy" decoding="async">
+        <img class="shot is-static" style="left:941px;top:96px;--i:3"   src="assets/screens/s02.jpg" alt="Мегаменю" loading="lazy" decoding="async">
+        <img class="shot is-static" style="left:73px;top:676px;--i:4"   src="assets/screens/s06.jpg" alt="Корзина" loading="lazy" decoding="async">
+        <img class="shot is-static" style="left:507px;top:96px;--i:5"   src="assets/screens/s11.jpg" alt="Готовые образы" loading="lazy" decoding="async">
+        <img class="shot"           style="left:507px;top:386px;--i:6"  src="assets/screens/s07.jpg" alt="Оформление заказа" loading="lazy" decoding="async">
+        <img class="shot is-static" style="left:73px;top:386px;--i:7"   src="assets/screens/s04.jpg" alt="Журнал — события" loading="lazy" decoding="async">
+        <img class="shot"           style="left:941px;top:676px;--i:8"  src="assets/screens/s09.jpg" alt="Личный кабинет — заказы" loading="lazy" decoding="async">
+        <img class="shot is-static" style="left:507px;top:676px;--i:9"  src="assets/screens/s08.jpg" alt="Покупателям — доставка" loading="lazy" decoding="async">
+        <img class="shot"           style="left:73px;top:676px;--i:10"  src="assets/screens/s10.jpg" alt="О бренде" loading="lazy" decoding="async">
+        <img class="shot is-static" style="left:941px;top:386px;--i:11" src="assets/screens/s12.jpg" alt="Журнал — люди" loading="lazy" decoding="async">
+      </div>
+    </section>
+
+    <!-- Финал: «Спасибо за просмотр» и кто работал над проектом. Ссылок нет —
+         кейс публикуется на Dprofile и Behance, площадка сама показывает профиль.
+         Надпись набрана Supermolot, поэтому вставлена контурами (SVG из Figma) -->
+    <section class="block" aria-label="12 · Итог и контакты">
+      <div class="stage tb b10" style="height:1088px">
+        <div class="hdr t f-meta" style="left:48px;top:48px">12  ·  Итог</div>
+        <div class="hdr t f-meta" style="right:48px;top:48px;text-align:right">Fizuli</div>
+        <div class="t f-txt" style="left:48px;top:163px;width:627px">Работа победила в&nbsp;конкурсе OQ клуба Сергея Оршака,<br>бренд взял её в&nbsp;разработку.</div>
+        <blockquote class="t f-txt" style="left:48px;top:303px;width:627px;margin:0"><p>«Проделана очень классная работа, нам очень понравилась.<br>Я,&nbsp;честно сказать, под впечатлением остался.»</p><p>«Мне нравится как коммерчески адаптирована работа.<br>Проект пришелся к&nbsp;душе»</p></blockquote>
+        <img class="f-avatar" src="assets/images/avatar-fizuli.png" alt="Физули" loading="lazy">
+        <div class="t lab" style="left:112px;top:446.5px">Физули, сооснователь бренда</div>
+        <img class="t" src="assets/type/n-2183-16300.svg" alt="Спасибо за просмотр" style="left:50.4px;top:587px;width:448px;height:119px">
+        <div class="r" style="left:725px;top:575px;width:627px;height:1px;background:rgba(255,255,255,0.2)"></div>
+        <div class="t lab" style="left:725px;top:600px">UX/UI-дизайнер</div>
+        <div class="t val" style="left:725px;top:625px">Екатерина Дмитриева</div>
+        <div class="t lab" style="left:725px;top:667px">Telegram</div>
+        <div class="t val" style="left:725px;top:692px">@KaterinaVDm</div>
+        <div class="t lab" style="left:725px;top:734px">Арт-директор</div>
+        <div class="t val" style="left:725px;top:759px">Сергей Оршак</div>
+        <div class="t lab" style="left:725px;top:801px">Клиент</div>
+        <div class="t val" style="left:725px;top:826px">Fizuli</div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // Блоки проявляются при прокрутке; видео играют, только пока видны
+    // Блоки, собранные кодом, масштабируются по ширине окна (макет 1400 px)
+    const fit = () => document.documentElement.style.setProperty('--z', Math.min(1, innerWidth / 1400));
+    fit(); addEventListener('resize', fit);
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) e.target.classList.add('is-visible');
+        // анимация «Всех экранов» не крутится вхолостую за пределами окна
+        e.target.querySelectorAll('.b9').forEach((s) => s.classList.toggle('is-paused', !e.isIntersecting));
+        e.target.querySelectorAll('video:not([data-hover])').forEach((v) => { e.isIntersecting ? v.play().catch(() => {}) : v.pause(); });
+        if (!e.isIntersecting) e.target.querySelectorAll('video[data-hover]').forEach((v) => v.pause());
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.block').forEach((b) => io.observe(b));
+
+    // «Сценарии»: видео играет, пока на половине курсор; соседняя половина тускнеет.
+    // Подпись шагов подсвечивает текущий этап по времени видео. На телефоне — нажатие.
+    (function () {
+      const halves = [...document.querySelectorAll('[data-half]')];
+      const touch = matchMedia('(hover: none)').matches;
+      halves.forEach((h) => {
+        const v = h.querySelector('video');
+        const steps = JSON.parse(v.dataset.steps);
+        const row = h.querySelector('.steps');
+        row.innerHTML = steps.map((s) => '<span>' + s[1] + '</span>').join('');
+        const spans = [...row.children];
+        const mark = () => { let k = 0; steps.forEach((s, i) => { if (v.currentTime >= s[0]) k = i; }); spans.forEach((el, i) => el.classList.toggle('on', i === k)); };
+        v.addEventListener('timeupdate', mark); mark();
+        const start = () => { halves.forEach((o) => o.classList.toggle('is-dim', o !== h)); h.classList.add('is-playing'); v.play().catch(() => {}); };
+        const stop = () => { halves.forEach((o) => o.classList.remove('is-dim')); h.classList.remove('is-playing'); v.pause(); };
+        if (touch) h.addEventListener('click', () => (v.paused ? (halves.forEach((o) => o !== h && o.querySelector('video').pause()), start()) : stop()));
+        else { h.addEventListener('mouseenter', start); h.addEventListener('mouseleave', stop); }
+      });
+    })();
+
+  </script>
+</body>
+</html>
