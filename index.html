@@ -30,6 +30,35 @@
     }
     /* Экран планшета в «Странице товара» скруглён, как в Figma (радиус 16,5 при 545 × 787) */
     .case video.is-tablet { border-radius: 3.02% / 2.09%; }
+
+    /* Все экраны: перетекающая подсветка из прошлой версии кейса. Анимируется только
+       непрозрачность (сдвиги и масштаб дают дрожание текста на экранах); все картинки
+       крутят одну анимацию, разводит их отрицательная задержка */
+    .all-screens { position: relative; aspect-ratio: 1400 / 1339; background: var(--black); overflow: hidden; }
+    .all-screens .shot {
+      position: absolute; display: block; max-width: none;
+      left: calc(var(--x) / 1400 * 100%); top: calc(var(--y) / 1339 * 100%);
+      width: calc(386 / 1400 * 100%); height: calc(241 / 1339 * 100%);
+      object-fit: cover; object-position: top center;
+      opacity: 0; will-change: opacity; backface-visibility: hidden;
+      animation: all-screens-fade 18s infinite both;
+      animation-delay: calc(var(--i) * -1.5s);
+    }
+    .all-screens.is-paused .shot { animation-play-state: paused; }
+    /* При появлении экран чуть вспыхивает: ярче и мягкое белое свечение, затем полная яркость */
+    @keyframes all-screens-fade {
+      0%      { opacity: 0; filter: brightness(1); box-shadow: 0 0 0 rgba(255, 255, 255, 0); animation-timing-function: linear; }
+      12%     { opacity: .85; filter: brightness(1.18); box-shadow: 0 0 48px rgba(255, 255, 255, .22); animation-timing-function: ease-out; }
+      16.67%  { opacity: 1; filter: brightness(1); box-shadow: 0 0 0 rgba(255, 255, 255, 0); animation-timing-function: linear; }
+      25%     { opacity: 1; animation-timing-function: ease-out; }
+      44.44%  { opacity: 0; }
+      100%    { opacity: 0; }
+    }
+    /* Кому движение мешает — статичная сетка, по экрану на ячейку */
+    @media (prefers-reduced-motion: reduce) {
+      .all-screens .shot { animation: none; opacity: 0; }
+      .all-screens .shot.is-static { opacity: 1; }
+    }
   </style>
 </head>
 <body>
@@ -56,7 +85,23 @@
     </div>
     <img src="assets/case3/b09.webp" width="2800" height="4240" alt="Оформление заказа: доставка по России, самовывоз, СНГ" loading="lazy">
     <img src="assets/case3/b10.webp" width="2800" height="2190" alt="Цвет и типографика" loading="lazy">
-    <img src="assets/case3/b11.webp" width="2800" height="2678" alt="Все экраны" loading="lazy">
+    <!-- Все экраны (анимация перенесена из прошлой версии кейса). Сетка 3×3 как в Figma:
+         ячейки 386 × 241, колонки 73 / 507 / 941, ряды 320 / 610 / 900 от верха блока 1400 × 1339.
+         Двенадцать экранов проступают из темноты по очереди, по одному каждые 1,5 с -->
+    <section class="all-screens" aria-label="Все экраны">
+      <img class="shot is-static" style="--x:507;--y:610;--i:0"  src="assets/screens/s01.jpg" alt="Главная" loading="lazy" decoding="async">
+      <img class="shot is-static" style="--x:73;--y:320;--i:1"   src="assets/screens/s03.jpg" alt="Каталог — повседневная линия" loading="lazy" decoding="async">
+      <img class="shot is-static" style="--x:941;--y:900;--i:2"  src="assets/screens/s05.jpg" alt="Карточка товара" loading="lazy" decoding="async">
+      <img class="shot is-static" style="--x:941;--y:320;--i:3"  src="assets/screens/s02.jpg" alt="Мегаменю" loading="lazy" decoding="async">
+      <img class="shot is-static" style="--x:73;--y:900;--i:4"   src="assets/screens/s06.jpg" alt="Корзина" loading="lazy" decoding="async">
+      <img class="shot is-static" style="--x:507;--y:320;--i:5"  src="assets/screens/s11.jpg" alt="Готовые образы" loading="lazy" decoding="async">
+      <img class="shot"           style="--x:507;--y:610;--i:6"  src="assets/screens/s07.jpg" alt="Оформление заказа" loading="lazy" decoding="async">
+      <img class="shot is-static" style="--x:73;--y:610;--i:7"   src="assets/screens/s04.jpg" alt="Журнал — события" loading="lazy" decoding="async">
+      <img class="shot"           style="--x:941;--y:900;--i:8"  src="assets/screens/s09.jpg" alt="Личный кабинет — заказы" loading="lazy" decoding="async">
+      <img class="shot is-static" style="--x:507;--y:900;--i:9"  src="assets/screens/s08.jpg" alt="Покупателям — доставка" loading="lazy" decoding="async">
+      <img class="shot"           style="--x:73;--y:900;--i:10"  src="assets/screens/s10.jpg" alt="О бренде" loading="lazy" decoding="async">
+      <img class="shot is-static" style="--x:941;--y:610;--i:11" src="assets/screens/s12.jpg" alt="Журнал — люди" loading="lazy" decoding="async">
+    </section>
     <img src="assets/case3/b12.webp" width="2800" height="3274" alt="Отзыв сооснователя бренда и участники проекта" loading="lazy">
   </main>
 
@@ -66,6 +111,11 @@
       entries.forEach((e) => { e.isIntersecting ? e.target.play().catch(() => {}) : e.target.pause(); });
     }, { threshold: 0.25 });
     document.querySelectorAll('.case video').forEach((v) => io.observe(v));
+    // Анимация «Все экраны» тоже стоит на паузе, пока блок не на экране
+    const ioScreens = new IntersectionObserver((entries) => {
+      entries.forEach((e) => e.target.classList.toggle('is-paused', !e.isIntersecting));
+    });
+    document.querySelectorAll('.all-screens').forEach((s) => ioScreens.observe(s));
   </script>
 </body>
 </html>
